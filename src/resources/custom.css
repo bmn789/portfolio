@@ -1,0 +1,685 @@
+/* :root {
+  /*
+  /* Override default variables here */
+  /*
+  --font-size-display-multiplier:   1;
+  --font-size-heading-multiplier:   1;
+  --font-size-body-multiplier:      1;
+  --font-size-label-multiplier:     1;
+
+  --line-height-display-multiplier: 1;
+  --line-height-heading-multiplier: 1;
+  --line-height-body-multiplier:    1;
+  --line-height-label-multiplier:   1;
+
+  --default-border:        var(--neutral-border-medium);
+
+  /*
+  /* Example setup for custom colors */
+  /* Generate at: https://once-ui.com/customize */
+  /*
+  --scheme-brand-100: #08002f;
+  --scheme-brand-200:  #04025c;
+  --scheme-brand-300:  #1f398e;
+  --scheme-brand-400:  #3856ae;
+  --scheme-brand-500:  #5071cc;
+  --scheme-brand-600:  #6f94f1;
+  --scheme-brand-700:  #8db3ff;
+  --scheme-brand-800:  #b2dbff;
+  --scheme-brand-900:  #bfe8ff;
+  --scheme-brand-1000: #ccf6ff;
+  --scheme-brand-1100: #d2fcff;
+  --scheme-brand-1200: #d2fcff;
+  --scheme-brand-600-10: rgba(111,148,241,0.1);
+  --scheme-brand-600-30: rgba(111,148,241,0.3);
+  --scheme-brand-600-50: rgba(111,148,241,0.5);
+
+  --scheme-accent-100:  #030b10;
+  --scheme-accent-200:  #0d181d;
+  --scheme-accent-300:  #364248;
+  --scheme-accent-400:  #505d64;
+  --scheme-accent-500:  #69777e;
+  --scheme-accent-600:  #8a989f;
+  --scheme-accent-700:  #a8b7bf;
+  --scheme-accent-800:  #c8d7df;
+  --scheme-accent-900:  #d5e4ec;
+  --scheme-accent-1000: #e2f1f9;
+  --scheme-accent-1100: #e9f8ff;
+  --scheme-accent-1200: #efffff;
+  --scheme-accent-600-10: rgba(138,152,159,0.1);
+  --scheme-accent-600-30: rgba(138,152,159,0.3);
+  --scheme-accent-600-50: rgba(138,152,159,0.5);
+
+  --scheme-neutral-100:  #020b10;
+  --scheme-neutral-200:  #0b181d;
+  --scheme-neutral-300:  #344248;
+  --scheme-neutral-400:  #4f5d64;
+  --scheme-neutral-500:  #68777e;
+  --scheme-neutral-600:  #89989f;
+  --scheme-neutral-700:  #a7b7be;
+  --scheme-neutral-800:  #c7d7df;
+  --scheme-neutral-900:  #d4e4ec;
+  --scheme-neutral-1000: #e1f2f9;
+  --scheme-neutral-1100: #e7f8ff;
+  --scheme-neutral-1200: #eeffff;
+  --scheme-neutral-600-10: rgba(137,152,159,0.1);
+  --scheme-neutral-600-30: rgba(137,152,159,0.3);
+  --scheme-neutral-600-50: rgba(137,152,159,0.5);
+  /*
+}*/
+
+/* Work page hero: very light gradient wash (no heavy fill) */
+.work-hero-faint-gradient {
+  background-image: linear-gradient(
+    165deg,
+    color-mix(in oklab, var(--scheme-brand-600, #0891b2) 10.5%, transparent) 0%,
+    transparent 48%,
+    color-mix(in oklab, var(--scheme-brand-600, #0891b2) 10.5%, transparent) 100%
+  );
+}
+
+/* Work page project cards */
+.work-project-card {
+  transition:
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    transform 0.28s ease;
+}
+
+.work-project-card:hover {
+  border-color: color-mix(in oklab, var(--scheme-brand-600, #0891b2) 35%, var(--default-border, #e2e8f0));
+  box-shadow:
+    0 1px 0 color-mix(in oklab, var(--scheme-brand-600, #0891b2) 12%, transparent),
+    0 18px 48px -12px color-mix(in oklab, var(--scheme-neutral-900, #0f172a) 18%, transparent);
+  transform: translateY(-2px);
+}
+
+.work-project-card-media-link {
+  position: relative;
+}
+
+.work-project-card-media-link:focus-visible {
+  outline: 2px solid var(--scheme-brand-600, #0891b2);
+  outline-offset: 2px;
+}
+
+.work-project-card-media-link :is(img, picture) {
+  transition: transform 0.4s ease;
+}
+
+.work-project-card:hover .work-project-card-media-link :is(img, picture),
+.work-project-card-media-link:hover :is(img, picture),
+.work-project-card-media-link:focus-visible :is(img, picture) {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-project-card,
+  .work-project-card-media-link :is(img, picture) {
+    transition: none;
+  }
+
+  .work-project-card:hover {
+    transform: none;
+  }
+
+  .work-project-card:hover .work-project-card-media-link :is(img, picture),
+  .work-project-card-media-link:hover :is(img, picture),
+  .work-project-card-media-link:focus-visible :is(img, picture) {
+    transform: none;
+  }
+}
+
+.home-section-heading {
+  position: relative;
+  width: fit-content;
+  padding: 0.25rem 1rem 0.75rem;
+}
+
+.home-section-heading::before {
+  content: "";
+  position: absolute;
+  inset: 0.65rem -0.75rem auto;
+  height: 2.15rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      color-mix(in oklab, var(--brand-background-strong) 12%, transparent),
+      transparent 64%
+    ),
+    linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--brand-background-strong) 8%, transparent),
+      transparent
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-section-heading > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-section-heading-title {
+  color: var(--neutral-on-background-strong);
+  background:
+    linear-gradient(
+      110deg,
+      var(--neutral-on-background-strong) 0%,
+      color-mix(in oklab, var(--brand-background-strong) 72%, var(--neutral-on-background-strong)) 38%,
+      color-mix(in oklab, var(--scheme-accent-600, #ef4444) 58%, var(--neutral-on-background-strong)) 68%,
+      var(--neutral-on-background-strong) 100%
+    );
+  background-size: 180% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 28px color-mix(in oklab, var(--brand-background-strong) 16%, transparent);
+  animation: home-section-title-shine 8s ease-in-out infinite alternate;
+}
+
+@keyframes home-section-title-shine {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+
+.home-section-heading-line {
+  width: min(12rem, 60vw);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--neutral-on-background-strong) 18%, transparent),
+    transparent
+  );
+}
+
+.home-skill-stat,
+.home-skill-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.28s ease;
+}
+
+.home-skill-stat {
+  min-width: min(100%, 16rem);
+  flex: 1 1 16rem;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--brand-background-strong) 10%, transparent),
+      transparent 54%
+    ),
+    color-mix(in oklab, var(--page-background) 88%, var(--neutral-background-weak));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, var(--neutral-on-background-strong) 6%, transparent),
+    0 16px 40px -28px color-mix(in oklab, var(--neutral-on-background-strong) 36%, transparent);
+}
+
+.home-skill-stat::after {
+  content: "";
+  position: absolute;
+  inset: auto 1rem 0 1rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--scheme-brand-600, #0891b2) 42%, transparent),
+    transparent
+  );
+}
+
+.home-skill-stat-orb {
+  width: 4rem;
+  height: 4rem;
+  flex: 0 0 4rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--brand-background-strong) 28%, var(--neutral-border-medium));
+  background:
+    radial-gradient(
+      circle at 32% 26%,
+      color-mix(in oklab, var(--brand-background-strong) 22%, transparent),
+      transparent 58%
+    ),
+    color-mix(in oklab, var(--brand-background-strong) 10%, var(--page-background));
+}
+
+.home-skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 12% 0%,
+      color-mix(in oklab, var(--scheme-brand-600, #0891b2) 12%, transparent),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--scheme-brand-600, #0891b2) 5%, transparent),
+      transparent 44%
+    );
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.home-skill-card {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--brand-background-strong) 5%, transparent),
+      transparent 64%
+    ),
+    color-mix(in oklab, var(--page-background) 92%, var(--neutral-background-weak));
+}
+
+.home-skill-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--scheme-brand-600, #0891b2) 65%, transparent),
+    color-mix(in oklab, var(--scheme-accent-600, #ef4444) 38%, transparent)
+  );
+  opacity: 0.85;
+}
+
+.home-skill-count {
+  min-height: 2rem;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--scheme-brand-600, #0891b2) 28%, var(--default-border, #e2e8f0));
+  background: color-mix(in oklab, var(--scheme-brand-600, #0891b2) 9%, transparent);
+}
+
+.home-skill-pill-cloud {
+  position: relative;
+  z-index: 1;
+}
+
+.home-skill-pill {
+  min-height: 2rem;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--neutral-alpha-medium);
+  background: color-mix(in oklab, var(--scheme-neutral-600, #64748b) 7%, transparent);
+  color: var(--neutral-on-background-strong);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, white 8%, transparent);
+  transition:
+    border-color 0.22s ease,
+    background 0.22s ease,
+    transform 0.22s ease;
+}
+
+.home-skill-pill-brand {
+  border-color: color-mix(in oklab, var(--scheme-brand-600, #0891b2) 36%, var(--default-border, #e2e8f0));
+  background: color-mix(in oklab, var(--scheme-brand-600, #0891b2) 12%, transparent);
+}
+
+.home-skill-pill-accent {
+  border-color: color-mix(in oklab, var(--scheme-accent-600, #ef4444) 30%, var(--default-border, #e2e8f0));
+  background: color-mix(in oklab, var(--scheme-accent-600, #ef4444) 10%, transparent);
+}
+
+.home-skill-pill-dot {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.72;
+}
+
+.home-skill-pill:hover {
+  border-color: color-mix(in oklab, var(--scheme-brand-600, #0891b2) 46%, var(--default-border, #e2e8f0));
+  background: color-mix(in oklab, var(--scheme-brand-600, #0891b2) 14%, transparent);
+  transform: translateY(-1px);
+}
+
+.home-education-card,
+.home-work-card {
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, var(--neutral-on-background-strong) 6%, transparent),
+    0 18px 48px -30px color-mix(in oklab, var(--neutral-on-background-strong) 34%, transparent);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.28s ease;
+}
+
+.home-education-card {
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 7%, transparent),
+      transparent 46%
+    ),
+    linear-gradient(
+      0deg,
+      color-mix(in oklab, var(--scheme-neutral-600, #64748b) 5%, transparent),
+      transparent 70%
+    ),
+    color-mix(in oklab, var(--page-background) 92%, var(--neutral-background-weak));
+}
+
+.home-work-card {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--scheme-accent-600, #ef4444) 8%, transparent),
+      transparent 50%
+    ),
+    color-mix(in oklab, var(--page-background) 92%, var(--neutral-background-weak));
+}
+
+.home-education-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 85% 14%,
+      color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 16%, transparent),
+      transparent 28%
+    ),
+    linear-gradient(
+      125deg,
+      transparent,
+      color-mix(in oklab, var(--scheme-neutral-600, #64748b) 7%, transparent) 48%,
+      transparent
+    );
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.home-work-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 92% 0%,
+      color-mix(in oklab, var(--scheme-accent-600, #ef4444) 13%, transparent),
+      transparent 32%
+    ),
+    linear-gradient(
+      270deg,
+      color-mix(in oklab, var(--scheme-accent-600, #ef4444) 5%, transparent),
+      transparent 44%
+    );
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.home-education-card:hover {
+  border-color: color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 38%, var(--neutral-border-medium));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, var(--neutral-on-background-strong) 7%, transparent),
+    0 22px 58px -32px color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 34%, transparent);
+  transform: scale(1.01);
+}
+
+.home-work-card:hover {
+  border-color: color-mix(in oklab, var(--scheme-accent-600, #ef4444) 34%, var(--neutral-border-medium));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, var(--neutral-on-background-strong) 7%, transparent),
+    0 24px 58px -30px color-mix(in oklab, var(--scheme-accent-600, #ef4444) 30%, transparent);
+  transform: translateX(4px);
+}
+
+.home-education-card:hover::before,
+.home-work-card:hover::before {
+  opacity: 1;
+}
+
+.home-section-kicker {
+  border: 1px solid color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 32%, var(--neutral-border-medium));
+  background: color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 10%, transparent);
+}
+
+.home-work-date {
+  border: 1px solid color-mix(in oklab, var(--scheme-accent-600, #ef4444) 28%, var(--neutral-border-medium));
+  background: color-mix(in oklab, var(--scheme-accent-600, #ef4444) 10%, transparent);
+}
+
+.home-education-score {
+  min-width: 6rem;
+  align-items: center;
+  border: 1px solid color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 32%, var(--neutral-border-medium));
+  background:
+    radial-gradient(
+      circle at 40% 20%,
+      color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 22%, transparent),
+      transparent 60%
+    ),
+    color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 9%, transparent);
+}
+
+.home-work-timeline {
+  position: relative;
+}
+
+.home-work-timeline::before {
+  content: "";
+  position: absolute;
+  left: 1.25rem;
+  top: 1.25rem;
+  bottom: 1.25rem;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--brand-background-strong) 44%, transparent),
+    color-mix(in oklab, var(--neutral-border-medium) 70%, transparent)
+  );
+}
+
+.home-work-card {
+  margin-left: 0.75rem;
+}
+
+.home-work-index {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 2.5rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--scheme-accent-600, #ef4444) 34%, var(--neutral-border-medium));
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      color-mix(in oklab, var(--scheme-accent-600, #ef4444) 20%, transparent),
+      transparent 58%
+    ),
+    color-mix(in oklab, var(--page-background) 86%, var(--scheme-accent-600, #ef4444));
+  box-shadow: 0 0 0 0.45rem var(--page-background);
+  z-index: 1;
+}
+
+.home-skill-card:hover,
+.home-skill-stat:hover {
+  border-color: color-mix(in oklab, var(--scheme-brand-600, #0891b2) 34%, var(--default-border, #e2e8f0));
+  box-shadow:
+    0 1px 0 color-mix(in oklab, var(--scheme-brand-600, #0891b2) 10%, transparent),
+    0 18px 46px -18px color-mix(in oklab, var(--scheme-neutral-900, #0f172a) 24%, transparent);
+  transform: translateY(-2px);
+}
+
+.home-skill-card:hover::before {
+  opacity: 1;
+}
+
+.home-contact-card {
+  margin-bottom: 1rem;
+}
+
+.home-contact-status {
+  border: 1px solid color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 32%, var(--neutral-border-medium));
+  background: color-mix(in oklab, var(--scheme-accent-600, #f59e0b) 10%, transparent);
+}
+
+.home-contact-actions {
+  min-width: min(100%, 18rem);
+}
+
+.home-contact-action {
+  padding: 0.875rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--neutral-alpha-medium);
+  background: color-mix(in oklab, var(--page-background) 82%, var(--neutral-background-weak));
+  transition:
+    border-color 0.24s ease,
+    background 0.24s ease,
+    transform 0.24s ease;
+}
+
+.home-contact-action:hover {
+  border-color: color-mix(in oklab, var(--brand-background-strong) 34%, var(--neutral-border-medium));
+  background: color-mix(in oklab, var(--brand-background-strong) 8%, var(--page-background));
+  transform: translateX(3px);
+}
+
+.home-project-showcase {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      color-mix(in oklab, var(--brand-background-strong) 12%, transparent),
+      transparent 30%
+    ),
+    linear-gradient(180deg, transparent, color-mix(in oklab, var(--brand-background-strong) 4%, transparent)),
+    color-mix(in oklab, var(--page-background) 92%, var(--neutral-background-weak));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, var(--neutral-on-background-strong) 6%, transparent),
+    0 18px 46px -32px color-mix(in oklab, var(--neutral-on-background-strong) 34%, transparent);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.28s ease;
+}
+
+.home-project-showcase::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 0.25rem;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--brand-background-strong) 70%, transparent),
+    color-mix(in oklab, var(--scheme-accent-600, #ef4444) 55%, transparent)
+  );
+}
+
+.home-project-showcase:hover {
+  border-color: color-mix(in oklab, var(--brand-background-strong) 34%, var(--neutral-border-medium));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, var(--neutral-on-background-strong) 7%, transparent),
+    0 22px 58px -30px color-mix(in oklab, var(--brand-background-strong) 28%, transparent);
+  transform: translateY(-2px);
+}
+
+.home-project-number {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.875rem;
+  border: 1px solid color-mix(in oklab, var(--brand-background-strong) 32%, var(--neutral-border-medium));
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      color-mix(in oklab, var(--brand-background-strong) 22%, transparent),
+      transparent 58%
+    ),
+    color-mix(in oklab, var(--brand-background-strong) 10%, transparent);
+}
+
+.home-project-category {
+  border: 1px solid color-mix(in oklab, var(--brand-background-strong) 28%, var(--neutral-border-medium));
+  background: color-mix(in oklab, var(--brand-background-strong) 9%, transparent);
+}
+
+.home-project-stack-chip {
+  min-height: 2rem;
+  padding: 0 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--neutral-alpha-medium);
+  background: color-mix(in oklab, var(--neutral-background-weak) 78%, transparent);
+}
+
+.home-project-footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--neutral-alpha-weak);
+}
+
+.home-project-url {
+  overflow-wrap: anywhere;
+}
+
+.home-project-action {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--brand-background-strong) 28%, var(--neutral-border-medium));
+  background: color-mix(in oklab, var(--brand-background-strong) 8%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-section-heading-title {
+    animation: none;
+  }
+
+  .home-skill-stat,
+  .home-skill-card,
+  .home-skill-card::before,
+  .home-skill-pill,
+  .home-education-card,
+  .home-work-card,
+  .home-education-card::before,
+  .home-work-card::before,
+  .home-contact-card,
+  .home-contact-card::before,
+  .home-contact-action,
+  .home-project-showcase {
+    transition: none;
+  }
+
+  .home-skill-card:hover,
+  .home-skill-stat:hover,
+  .home-skill-pill:hover,
+  .home-education-card:hover,
+  .home-work-card:hover,
+  .home-contact-card:hover,
+  .home-contact-action:hover,
+  .home-project-showcase:hover {
+    transform: none;
+  }
+}
+
+@media print {
+  .print-hidden {
+    display: none;
+  }
+
+  .page-break {
+    break-before: page;
+    padding-top: 24px;
+  }
+}
