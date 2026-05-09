@@ -57,7 +57,7 @@ const homeWorkExperiences: HomeExperience[] = [
   },
   {
     company: "Upgradableweb Technologies",
-    timeframe: "May 2023 — Feb 2024",
+    timeframe: "Apr 2023 — Jan 2024",
     role: "Full Stack Developer",
     achievements: [
       <>
@@ -69,7 +69,7 @@ const homeWorkExperiences: HomeExperience[] = [
   },
   {
     company: "Plausibility Solutions",
-    timeframe: "Dec 2022 — May 2023",
+    timeframe: "Aug 2022 — Mar 2023",
     role: "Junior Frontend Developer",
     achievements: [
       <>
