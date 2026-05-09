@@ -1,7 +1,5 @@
 # Barath Nethra Portfolio
 
-Personal portfolio for Barath Nethra, also known professionally as Bharath M N.
-
 ## Overview
 
 This portfolio showcases 4+ years of software development experience across frontend, backend, AI-assisted development, and production web delivery.
