@@ -14,8 +14,7 @@ import {
   Tag,
   SmartLink,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
-import { Posts } from "@/components/blog/Posts";
+import { home, about, person, baseURL } from "@/resources";
 import { IconName } from "@/resources/icons";
 
 const portfolioTitle = "Bharath M N | Software Developer";
@@ -101,11 +100,12 @@ const homeSkillGroups: HomeSkillGroup[] = [
     skills: [
       { label: "JavaScript", variant: "accent", icon: "javascript" },
       { label: "TypeScript", variant: "brand", icon: "javascript" },
+      { label: "Node.js", variant: "neutral" },
       { label: "Python", variant: "accent" },
     ],
   },
   {
-    title: "Frontend Craft",
+    title: "Frontend",
     description: "Fast, responsive product interfaces with polished interaction details.",
     skills: [
       { label: "React.js", variant: "brand", icon: "react" },
@@ -114,7 +114,7 @@ const homeSkillGroups: HomeSkillGroup[] = [
       { label: "Redux Toolkit", variant: "neutral" },
       { label: "Tailwind CSS", variant: "neutral" },
       { label: "Material UI", variant: "brand" },
-      { label: "Animations", variant: "accent" },
+      { label: "Animations", variant: "accent" }
     ],
   },
   {
@@ -165,7 +165,7 @@ const homeSkillGroups: HomeSkillGroup[] = [
     ],
   },
   {
-    title: "Web Growth & Integrations",
+    title: "Web & Integrations",
     description: "Search visibility, accessibility, performance, and third-party integrations.",
     skills: [
       { label: "SEO", variant: "brand" },
@@ -408,6 +408,12 @@ export default function Home() {
                 performance optimization
               </Text>
               , and AI-augmented development using ChatGPT, Cursor, Claude AI, and GitHub Copilot.
+            </Text>
+          </RevealFx>
+
+          <RevealFx translateY="4" delay={0.28} fillWidth horizontal="center">
+            <Text align="center" variant="label-default-m" onBackground="brand-medium">
+              Coming soon.
             </Text>
           </RevealFx>
 
@@ -854,21 +860,6 @@ export default function Home() {
         </Column>
       </RevealFx>
 
-
-      {routes["/blog"] && (
-        <Column className="print-hidden" fillWidth gap="24" marginBottom="l">
-          <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
-            <Row flex={1} paddingLeft="l" paddingTop="24">
-              <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                Latest from the blog
-              </Heading>
-            </Row>
-            <Row flex={3} paddingX="20">
-              <Posts range={[1, 2]} columns="2" />
-            </Row>
-          </Row>
-        </Column>
-      )}
 
     </Column>
   );

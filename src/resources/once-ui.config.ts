@@ -19,8 +19,8 @@ const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": false,
+  "/blog": false,
+  "/blogs": true,
   "/resume.html": true,
 };
 
@@ -135,7 +135,6 @@ const effects: EffectsConfig = {
 };
 
 const mailchimp: MailchimpConfig = {
-  action: "https://url/subscribe/post?parameters",
   effects: {
     gradient: {
       display: true,

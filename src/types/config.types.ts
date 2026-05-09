@@ -115,10 +115,13 @@ export type EffectsConfig = {
 };
 
 /**
- * Mailchimp configuration for newsletter forms.
+ * Newsletter block visual effects and submission (Web3 Forms or legacy Mailchimp URL).
  */
 export type MailchimpConfig = {
-  action: string;
+  /** Legacy Mailchimp form POST URL — used only if `web3formsAccessKey` is unset */
+  action?: string;
+  /** Web3 Forms access key from https://web3forms.com — client-side submissions */
+  web3formsAccessKey?: string;
   effects: EffectsConfig;
 };
 

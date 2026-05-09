@@ -5,49 +5,52 @@ import { Button, Heading, Input, Text, Background, Column, Row } from "@once-ui-
 import { opacity, SpacingToken } from "@once-ui-system/core";
 import { useState } from "react";
 
-function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
-  let timeout: ReturnType<typeof setTimeout>;
-  return ((...args: Parameters<T>) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), delay);
-  }) as T;
+function validateEmail(value: string): boolean {
+  if (value === "") return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex }) => {
-  const [email, setEmail] = useState<string>("");
-  const [error, setError] = useState<string>("");
-  const [touched, setTouched] = useState<boolean>(false);
+type MailchimpProps = React.ComponentProps<typeof Column> & {
+  /** Shown in Slack (e.g. "Blogs page", "Portfolio"); defaults to Portfolio */
+  subscriberSource?: string;
+};
 
-  const validateEmail = (email: string): boolean => {
-    if (email === "") {
-      return true;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setEmail(value);
-
-    if (!validateEmail(value)) {
-      setError("Please enter a valid email address.");
-    } else {
-      setError("");
-    }
-  };
-
-  const debouncedHandleChange = debounce(handleChange, 2000);
-
-  const handleBlur = () => {
-    setTouched(true);
-    if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
-    }
-  };
+export const Mailchimp: React.FC<MailchimpProps> = ({ subscriberSource = "Portfolio", ...flex }) => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [result, setResult] = useState<null | "success" | "error">(null);
 
   if (newsletter.display === false) return null;
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    setError("");
+    setResult(null);
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: subscriberSource }),
+      });
+      const data = (await res.json()) as { success?: boolean };
+      if (res.ok && data.success) {
+        setResult("success");
+        setEmail("");
+      } else {
+        setResult("error");
+      }
+    } catch {
+      setResult("error");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <Column
@@ -112,66 +115,59 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           display: "flex",
           justifyContent: "center",
         }}
-        action={mailchimp.action}
-        method="post"
         id="mc-embedded-subscribe-form"
         name="mc-embedded-subscribe-form"
+        onSubmit={onSubmit}
       >
-        <Row
-          id="mc_embed_signup_scroll"
-          fillWidth
-          maxWidth={24}
-          s={{ direction: "column" }}
-          gap="8"
-        >
-          <Input
-            formNoValidate
-            id="mce-EMAIL"
-            name="EMAIL"
-            type="email"
-            placeholder="Email"
-            required
-            onChange={(e) => {
-              if (error) {
-                handleChange(e);
-              } else {
-                debouncedHandleChange(e);
-              }
-            }}
-            onBlur={handleBlur}
-            errorMessage={error}
-          />
-          <div style={{ display: "none" }}>
-            <input
-              type="checkbox"
-              readOnly
-              name="group[3492][1]"
-              id="mce-group[3492]-3492-0"
-              value=""
-              checked
-            />
-          </div>
-          <div id="mce-responses" className="clearfalse">
-            <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
-            <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
-          </div>
-          <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
-            <input
-              type="text"
-              readOnly
-              name="b_c1a5a210340eb6c7bff33b2ba_0462d244aa"
-              tabIndex={-1}
-              value=""
-            />
-          </div>
-          <div className="clear">
-            <Row height="48" vertical="center">
-              <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth>
-                Subscribe
-              </Button>
+        <Column id="mc_embed_signup_scroll" fillWidth maxWidth={24} gap="8">
+          <Row fillWidth gap="8" vertical="center" s={{ direction: "column" }}>
+            <Column fillWidth flex={1} minWidth={0}>
+              <Input
+                id="wf-email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                required
+                height="m"
+                value={email}
+                onChange={(ev) => {
+                  setEmail(ev.target.value);
+                  setResult(null);
+                  if (error) setError("");
+                }}
+                errorMessage={error}
+              />
+            </Column>
+            <Column flex={0} minWidth={0} fillWidth={false} s={{ fillWidth: true }}>
+              <Row height="48" vertical="center">
+                <Button id="wf-submit" type="submit" size="m" fillWidth loading={submitting} disabled={submitting}>
+                  Subscribe
+                </Button>
+              </Row>
+            </Column>
+          </Row>
+          {(result === "success" || result === "error") && (
+            <Row
+              fillWidth
+              horizontal="center"
+              paddingY="12"
+              paddingX="16"
+              radius="m"
+              background={result === "success" ? "brand-alpha-medium" : "neutral-alpha-weak"}
+            >
+              <Text
+                variant="body-default-s"
+                align="center"
+                wrap="balance"
+                onBackground={result === "success" ? "brand-strong" : "neutral-strong"}
+              >
+                {result === "success"
+                  ? "Thanks — you’re subscribed."
+                  : "Something went wrong. Please try again."}
+              </Text>
             </Row>
-          </div>
-        </Row>
+          )}
+        </Column>
       </form>
     </Column>
   );
