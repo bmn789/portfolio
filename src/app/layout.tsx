@@ -42,6 +42,18 @@ export default async function RootLayout({
     
     >
       <head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SXV8END968"></script>
+<script id="ga4" 
+dangerouslySetInnerHTML={{
+  __html: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SXV8END968');`
+}}>
+  
+</script>
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
