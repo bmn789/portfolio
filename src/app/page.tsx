@@ -182,7 +182,7 @@ const homeSkillGroups: HomeSkillGroup[] = [
   },
 ];
 
-type HomeKeyProject = {
+type HomeFeaturedProject = {
   title: string;
   description: string;
   href: string;
@@ -190,7 +190,7 @@ type HomeKeyProject = {
   stack: string[];
 };
 
-const homeKeyProjects: HomeKeyProject[] = [
+const homeFeaturedProjects: HomeFeaturedProject[] = [
   {
     title: "Healthcare SAAS",
     description:
@@ -242,8 +242,14 @@ type HomeUpskill = {
 
 const homeCurrentUpskills: HomeUpskill[] = [
   {
+    title: "AI Upskilling Certificate",
+    description: "Qualcomm",
+    href: "https://drive.google.com/file/d/1a9C-TGMMkuEZQNqULYielBqSZWX8Lyjp/view?usp=sharing",
+    linkLabel: "Certificate",
+  },
+  {
     title: "Prompt Engineering / LLM / RAG",
-    description: "Prompt Engineering (Simplilearn)",
+    description: "Simplilearn",
     href: "https://drive.google.com/file/d/1itNIIE_gjJNqyjnGQDfmZo8FIIRipg-H/view?usp=sharing",
     linkLabel: "Certificate",
   },
@@ -264,16 +270,7 @@ const homeCurrentUpskills: HomeUpskill[] = [
     description: "Conversational AI and agents development with Google Agent Development Kit (ADK)",
     href: "https://adk.dev/",
     linkLabel: "ADK",
-  },
-  {
-    title: "AI Augmented Coding",
-    description:
-      "AI pair programming for code generation and test writing (Cursor, Claude, Codex, ChatGPT).",
-  },
-  {
-    title: "System Design",
-    description: "Scalable architectures and distributed systems",
-  },
+  }
 ];
 
 export async function generateMetadata() {
@@ -410,26 +407,6 @@ export default function Home() {
               , and AI-augmented development using ChatGPT, Cursor, Claude AI, and GitHub Copilot.
             </Text>
           </RevealFx>
-
-          <RevealFx translateY="4" delay={0.28} fillWidth horizontal="center">
-            <Text align="center" variant="label-default-m" onBackground="brand-medium">
-              Coming soon.
-            </Text>
-          </RevealFx>
-
-          {/* <RevealFx delay={0.25} fillWidth horizontal="center">
-            <Row gap="12" wrap horizontal="center" vertical="center">
-              <Button href="https://linkedin.com/in/barathnethra" variant="secondary" size="s">
-                LinkedIn
-              </Button>
-              <Button href="https://github.com/bmn789" variant="secondary" size="s">
-                GitHub
-              </Button>
-              <Button href="https://bmn789.vercel.app" variant="secondary" size="s">
-                AI Assistant
-              </Button>
-            </Row>
-          </RevealFx> */}
 
           <RevealFx delay={0.35} horizontal="center" paddingTop="32">
             <Button
@@ -670,9 +647,9 @@ export default function Home() {
             </Column>
           </HomeSection>
 
-          <HomeSection title="Key Projects">
+          <HomeSection title="Featured Projects">
             <Column className="home-project-grid" fillWidth gap="16">
-              {homeKeyProjects.map((project, index) => (
+              {homeFeaturedProjects.map((project, index) => (
                 <Column
                   key={project.href}
                   className="home-project-showcase"

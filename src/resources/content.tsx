@@ -220,8 +220,14 @@ const about: About = {
     title: "Certificates & Upskills",
     items: [
       {
+        title: "AI Upskilling Certificate",
+        description: <>Qualcomm</>,
+        href: "https://drive.google.com/file/d/1a9C-TGMMkuEZQNqULYielBqSZWX8Lyjp/view?usp=sharing",
+        linkLabel: "Certificate",
+      },
+      {
         title: "Prompt Engineering / LLM / RAG",
-        description: <>Prompt Engineering (Simplilearn)</>,
+        description: <>Simplilearn</>,
         href: "https://drive.google.com/file/d/1itNIIE_gjJNqyjnGQDfmZo8FIIRipg-H/view?usp=sharing",
         linkLabel: "Certificate",
       },
