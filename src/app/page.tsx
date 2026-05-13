@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import {
   Heading,
   Text,
@@ -233,6 +234,36 @@ const homeFeaturedProjects: HomeFeaturedProject[] = [
   },
 ];
 
+type HomeCertificate = {
+  program: string;
+  issuer: string;
+  imageSrc: string;
+  /** Official hosted certificate (e.g. Google Drive). */
+  verifyHref: string;
+};
+
+const homeCertificates: HomeCertificate[] = [
+  {
+    program: "AI Upskilling Certificate",
+    issuer: "Qualcomm",
+    imageSrc: "/certificates/qualcomm.png",
+    verifyHref:
+      "https://drive.google.com/file/d/1a9C-TGMMkuEZQNqULYielBqSZWX8Lyjp/view?usp=sharing",
+  },
+  {
+    program: "Prompt Engineering / LLM / RAG",
+    issuer: "Simplilearn",
+    imageSrc: "/certificates/simplilearn.png",
+    verifyHref: "https://drive.google.com/file/d/1itNIIE_gjJNqyjnGQDfmZo8FIIRipg-H/view?usp=sharing",
+  },
+  {
+    program: "Advanced Prompt Engineering with ChatGPT",
+    issuer: "UpGrad",
+    imageSrc: "/certificates/upgrad.png",
+    verifyHref: "https://drive.google.com/file/d/1-PsSo5ro7Rdju3y_he327J2LOFJHT6Vy/view?usp=sharing",
+  },
+];
+
 type HomeUpskill = {
   title: string;
   description: string;
@@ -241,24 +272,6 @@ type HomeUpskill = {
 };
 
 const homeCurrentUpskills: HomeUpskill[] = [
-  {
-    title: "AI Upskilling Certificate",
-    description: "Qualcomm",
-    href: "https://drive.google.com/file/d/1a9C-TGMMkuEZQNqULYielBqSZWX8Lyjp/view?usp=sharing",
-    linkLabel: "Certificate",
-  },
-  {
-    title: "Prompt Engineering / LLM / RAG",
-    description: "Simplilearn",
-    href: "https://drive.google.com/file/d/1itNIIE_gjJNqyjnGQDfmZo8FIIRipg-H/view?usp=sharing",
-    linkLabel: "Certificate",
-  },
-  {
-    title: "Advanced Prompt Engineering with ChatGPT",
-    description: "UpGrad",
-    href: "https://drive.google.com/file/d/1-PsSo5ro7Rdju3y_he327J2LOFJHT6Vy/view?usp=sharing",
-    linkLabel: "Certificate",
-  },
   {
     title: "GitHub Copilot",
     description: "Copilot Fundamentals",
@@ -270,7 +283,16 @@ const homeCurrentUpskills: HomeUpskill[] = [
     description: "Conversational AI and agents development with Google Agent Development Kit (ADK)",
     href: "https://adk.dev/",
     linkLabel: "ADK",
-  }
+  },
+  {
+    title: "AI Augmented Coding",
+    description:
+      "AI pair programming for code generation and test writing (Cursor, Claude, Codex, ChatGPT).",
+  },
+  {
+    title: "System Design",
+    description: "Scalable architectures and distributed systems",
+  },
 ];
 
 export async function generateMetadata() {
@@ -287,7 +309,7 @@ function HomeSection({ title, children }: { title: string; children: ReactNode }
   return (
     <Column fillWidth gap="24" marginBottom="l">
       <Row fillWidth horizontal="center" paddingBottom="8">
-        <Column  horizontal="center" gap="8">
+        <Column horizontal="center" gap="8">
           <Heading
             className="home-section-heading-title"
             as="h2"
@@ -307,7 +329,7 @@ function HomeSection({ title, children }: { title: string; children: ReactNode }
 }
 
 export default function Home() {
- 
+
 
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
@@ -325,120 +347,184 @@ export default function Home() {
         }}
       />
 
+      {home.featured.display && (
+        <RevealFx
+          fillWidth
+          horizontal="center"
+          paddingTop="16"
+          paddingLeft="12"
+          className="print-hidden"
+        >
+          <Badge
+            background="brand-alpha-weak"
+            paddingX="12"
+            paddingY="4"
+            onBackground="neutral-strong"
+            textVariant="label-default-s"
+            arrow={false}
+            href={home.featured.href}
+          >
+            <Row>{home.featured.title}</Row>
+          </Badge>
+        </RevealFx>
+      )}
+
+      <RevealFx translateY="8" delay={0.05} fillWidth>
+
+        <Column fillWidth gap="20">
+          <div className="home-certificate-grid">
+            {homeCertificates.map((cert, certIndex) => (
+              <Column
+                key={cert.imageSrc}
+                className="home-certificate-card"
+                fillWidth
+                radius="xl"
+                border="neutral-alpha-weak"
+                gap="0"
+              >
+                <div className="home-certificate-image-wrap">
+                  <Image
+                    src={cert.imageSrc}
+                    alt={`${cert.program} — ${cert.issuer}`}
+                    fill
+                    priority={certIndex === 0}
+                    sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 33vw"
+                    className="home-certificate-image"
+                  />
+                </div>
+                <Column className="home-certificate-card-body" fillWidth gap="16">
+                  <Column gap="12" fillWidth>
+                    <Row fillWidth horizontal="between" vertical="center" wrap gap="8">
+                      <Row
+                        className="home-certificate-issuer-pill"
+                        fitWidth
+                        paddingX="12"
+                        paddingY="4"
+                        radius="full"
+                        vertical="center"
+                      >
+                        <Text variant="label-default-s" onBackground="brand-strong">
+                          {cert.issuer}
+                        </Text>
+                      </Row>
+                      <Row
+                        className="home-certificate-format-badge"
+                        fitWidth
+                        paddingX="12"
+                        paddingY="4"
+                        radius="full"
+                        vertical="center"
+                      >
+                        <Text variant="label-default-s" onBackground="neutral-strong">
+                          PDF
+                        </Text>
+                      </Row>
+                    </Row>
+                    <Heading as="h3" variant="heading-strong-m" wrap="balance">
+                      {cert.program}
+                    </Heading>
+                  </Column>
+                  <Column gap="12" fillWidth>
+                    <SmartLink
+                      href={cert.verifyHref}
+                      suffixIcon="arrowUpRightFromSquare"
+                      className="home-certificate-primary-action"
+                      style={{ margin: "0", width: "fit-content" }}
+                    >
+                      <Text variant="body-default-s" onBackground="brand-weak">
+                        View certificate
+                      </Text>
+                    </SmartLink>
+                  </Column>
+                </Column>
+              </Column>
+            ))}
+          </div>
+        </Column>
+
+      </RevealFx>
+
       <Column fillWidth horizontal="center" gap="m">
 
-        {home.featured.display && (
-          <RevealFx
-            fillWidth
-            horizontal="center"
-            paddingTop="16"
-            paddingBottom="16"
-            paddingLeft="12"
-            className="print-hidden"
+        <RevealFx delay={0.35} horizontal="center">
+          <Button
+            id="about"
+            data-border="rounded"
+            href={about.path}
+            variant="secondary"
+            size="m"
+            weight="default"
+            arrowIcon
           >
-            <Badge
-              background="brand-alpha-weak"
-              paddingX="12"
-              paddingY="4"
-              onBackground="neutral-strong"
-              textVariant="label-default-s"
-              arrow={false}
-              href={home.featured.href}
-            >
-              <Row>{home.featured.title}</Row>
-            </Badge>
-          </RevealFx>
-        )}
-
-
-        <Column maxWidth="s" horizontal="center" align="center" fillWidth gap="m">
-          <RevealFx translateY="4" fillWidth horizontal="center">
-            <Heading as="h1" wrap="balance" variant="display-strong-l">
-              {home.headline}
-            </Heading>
-          </RevealFx>
-
-          <RevealFx translateY="4" delay={0.2} fillWidth horizontal="center" paddingTop="16">
-            {/* <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+            <Row gap="8" vertical="center" paddingRight="4">
+              {about.avatar.display && (
+                <Avatar
+                  marginRight="8"
+                  style={{ marginLeft: "-0.75rem" }}
+                  src={person.avatar}
+                  size="m"
+                />
+              )}
+              About – Bharath M N
+            </Row>
+          </Button>
+        </RevealFx>
+        <RevealFx translateY="4" delay={0.2} paddingTop="8" >
+          {/* <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
             </Text> */}
-            <Text onBackground="neutral-weak" variant="body-default-m">
-              Software Developer with{" "}
-              <Text as="span" onBackground="info-strong">
-                4+ years
-              </Text>{" "}
-              of experience building scalable, high-performance web applications, with a strong
-              focus on systems using{" "}
-              <Text as="span" onBackground="info-strong">
-                Node.js
-              </Text>
-              . Proficient in designing RESTful APIs,{" "}
-              <Text as="span" onBackground="info-strong">
-                microservices
-              </Text>
-              , and real-time architectures. Skilled in{" "}
-              <Text as="span" onBackground="info-strong">
-                TypeScript
-              </Text>
-              ,{" "}
-              <Text as="span" onBackground="info-strong">
-                React.js
-              </Text>
-              ,{" "}
-              <Text as="span" onBackground="info-strong">
-                Next.js
-              </Text>
-              ,{" "}
-              <Text as="span" onBackground="info-strong">
-                Express.js
-              </Text>
-              ,{" "}
-              <Text as="span" onBackground="info-strong">
-                Astro.js
-              </Text>
-              . Strong expertise in{" "}
-              <Text as="span" onBackground="info-strong">
-                system design
-              </Text>
-              ,{" "}
-              <Text as="span" onBackground="info-strong">
-                performance optimization
-              </Text>
-              , and AI-augmented development using ChatGPT, Cursor, Claude AI, and GitHub Copilot.
+          <Text onBackground="neutral-weak" variant="body-default-m" align="center">
+            Software Developer with{" "}
+            <Text as="span" onBackground="info-strong">
+              4+ years
+            </Text>{" "}
+            of experience building scalable, high-performance web applications, with a strong
+            focus on systems using{" "}
+            <Text as="span" onBackground="info-strong">
+              Node.js
             </Text>
-          </RevealFx>
+            . Proficient in designing RESTful APIs,{" "}
+            <Text as="span" onBackground="info-strong">
+              microservices
+            </Text>
+            , and real-time architectures. Skilled in{" "}
+            <Text as="span" onBackground="info-strong">
+              TypeScript
+            </Text>
+            ,{" "}
+            <Text as="span" onBackground="info-strong">
+              React.js
+            </Text>
+            ,{" "}
+            <Text as="span" onBackground="info-strong">
+              Next.js
+            </Text>
+            ,{" "}
+            <Text as="span" onBackground="info-strong">
+              Express.js
+            </Text>
+            ,{" "}
+            <Text as="span" onBackground="info-strong">
+              Astro.js
+            </Text>
+            . Strong expertise in{" "}
+            <Text as="span" onBackground="info-strong">
+              system design
+            </Text>
+            ,{" "}
+            <Text as="span" onBackground="info-strong">
+              performance optimization
+            </Text>
+            , and AI-augmented development using ChatGPT, Cursor, Claude AI, and GitHub Copilot.
+          </Text>
+        </RevealFx>
 
-          <RevealFx delay={0.35} horizontal="center" paddingTop="32">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                About – Bharath M N
-              </Row>
-            </Button>
-          </RevealFx>
-        </Column>
+
+
       </Column>
 
       <RevealFx translateY="12" delay={0.4} fillWidth>
         <Column fillWidth>
-
-       
-
           <HomeSection title="Skills">
             <Column fillWidth gap="16">
               <Row fillWidth gap="12" wrap>
@@ -715,7 +801,7 @@ export default function Home() {
             </Column>
           </HomeSection>
 
-          <HomeSection title="Certificates & Upskills">
+          <HomeSection title="Upskills">
             <Column fillWidth gap="16">
               {homeCurrentUpskills.map((item, index) => (
                 <Column
@@ -747,7 +833,7 @@ export default function Home() {
                     <SmartLink
                       href={item.href ?? "#"}
                       suffixIcon="arrowUpRightFromSquare"
-                        className="home-project-action brand-on-background-weak"
+                      className="home-project-action brand-on-background-weak"
                       style={{
                         margin: "0",
                         width: "fit-content",

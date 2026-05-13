@@ -223,19 +223,19 @@ const about: About = {
         title: "AI Upskilling Certificate",
         description: <>Qualcomm</>,
         href: "https://drive.google.com/file/d/1a9C-TGMMkuEZQNqULYielBqSZWX8Lyjp/view?usp=sharing",
-        linkLabel: "Certificate",
+        linkLabel: "View certificate",
       },
       {
         title: "Prompt Engineering / LLM / RAG",
         description: <>Simplilearn</>,
         href: "https://drive.google.com/file/d/1itNIIE_gjJNqyjnGQDfmZo8FIIRipg-H/view?usp=sharing",
-        linkLabel: "Certificate",
+        linkLabel: "View certificate",
       },
       {
         title: "Advanced Prompt Engineering with ChatGPT",
         description: <>UpGrad</>,
         href: "https://drive.google.com/file/d/1-PsSo5ro7Rdju3y_he327J2LOFJHT6Vy/view?usp=sharing",
-        linkLabel: "Certificate",
+        linkLabel: "View certificate",
       },
       {
         title: "GitHub Copilot",

@@ -5,13 +5,11 @@ import { useEffect, useLayoutEffect } from "react";
 
 function scrollWindowToTop() {
   window.scrollTo(0, 0);
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
 }
 
 /**
- * Next.js restores scroll positions in some layouts; forcing the window/document
- * root here keeps route changes anchored at the top of the viewport.
+ * Keeps route changes anchored at the top. Scroll is applied without smooth animation
+ * (overrides inherited scroll-behavior: smooth for this jump).
  */
 export function ScrollToTop() {
   const pathname = usePathname();
