@@ -1,6 +1,6 @@
 {
   "name": "barath-portfolio",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "scripts": {
     "dev": "next dev",
     "export": "next export",
