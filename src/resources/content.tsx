@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Barath",
   lastName: "Nethra",
   name: `Barath Nethra`,
-  role: "Software Developer",
+  role: "Software Development Engineer - SDE",
   avatar: "/images/barath.png",
   email: "bmn7892@gmail.com",
   location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
