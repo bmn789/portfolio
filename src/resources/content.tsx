@@ -60,11 +60,11 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "https://bmn789.vercel.app",
+    href: "https://agent-b7.vercel.app",
   },
   subline: (
     <>
-      I'm Barath Nethra, a SDE at <Text as="span" size="xl" weight="strong">Codewave Technologies</Text>, where I craft intuitive user experiences.
+      I'm Barath Nethra, a SDE at <Text as="span" weight="strong">Codewave Technologies</Text>, where I craft intuitive user experiences.
     </>
   ),
 };

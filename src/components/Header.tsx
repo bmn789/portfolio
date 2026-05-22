@@ -78,7 +78,7 @@ export const Header = () => {
         }}
       >
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          <Row s={{ hide: true }}>Bharath's Portfolio</Row>
+          <Row s={{ hide: true }}>Barath's Portfolio</Row>
         </Row>
         <Row fillWidth horizontal="center">
           <Row

@@ -342,7 +342,7 @@ export default function Home() {
         image={`/api/og/generate?title=${encodeURIComponent(portfolioTitle)}`}
         author={{
           name: "Bharath M N",
-          url: "https://bmn789.vercel.app",
+          url: "https://barathnethra.vercel.app",
           image: `${baseURL}${person.avatar}`,
         }}
       />
@@ -369,80 +369,18 @@ export default function Home() {
         </RevealFx>
       )}
 
-      <RevealFx translateY="8" delay={0.05} fillWidth>
-
-        <Column fillWidth gap="20">
-          <div className="home-certificate-grid">
-            {homeCertificates.map((cert, certIndex) => (
-              <Column
-                key={cert.imageSrc}
-                className="home-certificate-card"
-                fillWidth
-                radius="xl"
-                border="neutral-alpha-weak"
-                gap="0"
-              >
-                <div className="home-certificate-image-wrap">
-                  <Image
-                    src={cert.imageSrc}
-                    alt={`${cert.program} — ${cert.issuer}`}
-                    fill
-                    priority={certIndex === 0}
-                    sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 33vw"
-                    className="home-certificate-image"
-                  />
-                </div>
-                <Column className="home-certificate-card-body" fillWidth gap="16">
-                  <Column gap="12" fillWidth>
-                    <Row fillWidth horizontal="between" vertical="center" wrap gap="8">
-                      <Row
-                        className="home-certificate-issuer-pill"
-                        fitWidth
-                        paddingX="12"
-                        paddingY="4"
-                        radius="full"
-                        vertical="center"
-                      >
-                        <Text variant="label-default-s" onBackground="brand-strong">
-                          {cert.issuer}
-                        </Text>
-                      </Row>
-                      <Row
-                        className="home-certificate-format-badge"
-                        fitWidth
-                        paddingX="12"
-                        paddingY="4"
-                        radius="full"
-                        vertical="center"
-                      >
-                        <Text variant="label-default-s" onBackground="neutral-strong">
-                          PDF
-                        </Text>
-                      </Row>
-                    </Row>
-                    <Heading as="h3" variant="heading-strong-m" wrap="balance">
-                      {cert.program}
-                    </Heading>
-                  </Column>
-                  <Column gap="12" fillWidth>
-                    <SmartLink
-                      href={cert.verifyHref}
-                      suffixIcon="arrowUpRightFromSquare"
-                      className="home-certificate-primary-action"
-                      style={{ margin: "0", width: "fit-content" }}
-                    >
-                      <Text variant="body-default-s" onBackground="brand-weak">
-                        View certificate
-                      </Text>
-                    </SmartLink>
-                  </Column>
-                </Column>
-              </Column>
-            ))}
-          </div>
-        </Column>
-
-      </RevealFx>
+      <Column maxWidth="s" horizontal="center" align="center" fillWidth gap="m">
+        <RevealFx translateY="4" fillWidth horizontal="center">
+          <Heading as="h1" wrap="balance" variant="display-strong-l">
+            {home.headline}
+          </Heading>
+        </RevealFx>
+        <RevealFx translateY="4" fillWidth horizontal="center">
+          <Text onBackground="neutral-weak" variant="body-default-m" align="center">
+            {home.subline}
+          </Text>
+        </RevealFx>
+      </Column>
 
       <Column fillWidth horizontal="center" gap="m">
 
@@ -802,6 +740,7 @@ export default function Home() {
           </HomeSection>
 
           <HomeSection title="Upskills">
+
             <Column fillWidth gap="16">
               {homeCurrentUpskills.map((item, index) => (
                 <Column
@@ -854,7 +793,82 @@ export default function Home() {
                 </Column>
               ))}
             </Column>
+
           </HomeSection>
+
+          <HomeSection title="Certificates">
+          <Column fillWidth gap="20" marginBottom="56">
+              <div className="home-certificate-grid">
+                {homeCertificates.map((cert, certIndex) => (
+                  <Column
+                    key={cert.imageSrc}
+                    className="home-certificate-card"
+                    fillWidth
+                    radius="xl"
+                    border="neutral-alpha-weak"
+                    gap="0"
+                  >
+                    <div className="home-certificate-image-wrap">
+                      <Image
+                        src={cert.imageSrc}
+                        alt={`${cert.program} — ${cert.issuer}`}
+                        fill
+                        priority={certIndex === 0}
+                        sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 33vw"
+                        className="home-certificate-image"
+                      />
+                    </div>
+                    <Column className="home-certificate-card-body" fillWidth gap="16">
+                      <Column gap="12" fillWidth>
+                        <Row fillWidth horizontal="between" vertical="center" wrap gap="8">
+                          <Row
+                            className="home-certificate-issuer-pill"
+                            fitWidth
+                            paddingX="12"
+                            paddingY="4"
+                            radius="full"
+                            vertical="center"
+                          >
+                            <Text variant="label-default-s" onBackground="brand-strong">
+                              {cert.issuer}
+                            </Text>
+                          </Row>
+                          <Row
+                            className="home-certificate-format-badge"
+                            fitWidth
+                            paddingX="12"
+                            paddingY="4"
+                            radius="full"
+                            vertical="center"
+                          >
+                            <Text variant="label-default-s" onBackground="neutral-strong">
+                              PDF
+                            </Text>
+                          </Row>
+                        </Row>
+                        <Heading as="h3" variant="heading-strong-m" wrap="balance">
+                          {cert.program}
+                        </Heading>
+                      </Column>
+                      <Column gap="12" fillWidth>
+                        <SmartLink
+                          href={cert.verifyHref}
+                          suffixIcon="arrowUpRightFromSquare"
+                          className="home-certificate-primary-action"
+                          style={{ margin: "0", width: "fit-content" }}
+                        >
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            View certificate
+                          </Text>
+                        </SmartLink>
+                      </Column>
+                    </Column>
+                  </Column>
+                ))}
+              </div>
+            </Column>
+          </HomeSection>
+
 
           <HomeSection title="Contact">
             <Column
