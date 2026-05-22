@@ -94,6 +94,12 @@ type HomeSkillGroup = {
   skills: HomeSkillChip[];
 };
 
+const homeSkillStats = [
+  { value: "50+", label: "Tools & skills", detail: "Across frontend, backend, cloud, and delivery" },
+  { value: "4+", label: "Years applying them", detail: "Production web development experience" },
+  { value: "10+", label: "Featured projects", detail: "Shipped product and portfolio builds" },
+] as const;
+
 const homeSkillGroups: HomeSkillGroup[] = [
   {
     title: "Core Languages",
@@ -375,12 +381,42 @@ export default function Home() {
             {home.headline}
           </Heading>
         </RevealFx>
-        <RevealFx translateY="4" fillWidth horizontal="center">
+        {/* <RevealFx translateY="4" fillWidth horizontal="center">
           <Text onBackground="neutral-weak" variant="body-default-m" align="center">
             {home.subline}
           </Text>
-        </RevealFx>
+        </RevealFx> */}
       </Column>
+
+      <RevealFx translateY="4" delay={0.3} fillWidth>
+          <Row fillWidth gap="12" wrap>
+            {homeSkillStats.map((item) => (
+              <Column
+                key={item.label}
+                className="home-skill-stat"
+                padding="20"
+                radius="xl"
+                border="neutral-alpha-weak"
+                background="page"
+                gap="8"
+              >
+                <Row gap="12" vertical="center">
+                  <Row className="home-skill-stat-orb" vertical="center" horizontal="center">
+                    <Text variant="heading-strong-m" onBackground="brand-strong">
+                      {item.value}
+                    </Text>
+                  </Row>
+                  <Column gap="2">
+                    <Text variant="heading-strong-s">{item.label}</Text>
+                    <Text variant="body-default-xs" onBackground="neutral-weak">
+                      {item.detail}
+                    </Text>
+                  </Column>
+                </Row>
+              </Column>
+            ))}
+          </Row>
+        </RevealFx>
 
       <Column fillWidth horizontal="center" gap="m">
 
@@ -457,49 +493,13 @@ export default function Home() {
           </Text>
         </RevealFx>
 
-
-
+       
       </Column>
 
       <RevealFx translateY="12" delay={0.4} fillWidth>
         <Column fillWidth>
           <HomeSection title="Skills">
-            <Column fillWidth gap="16">
-              <Row fillWidth gap="12" wrap>
-                {[
-                  { value: "50+", label: "Tools & skills", detail: "Across frontend, backend, cloud, and delivery" },
-                  { value: "4+", label: "Years applying them", detail: "Production web development experience" },
-                  { value: "10+", label: "Featured projects", detail: "Shipped product and portfolio builds" },
-                ].map((item) => (
-                  <Column
-                    key={item.label}
-                    className="home-skill-stat"
-                    padding="20"
-                    radius="xl"
-                    border="neutral-alpha-weak"
-                    background="page"
-                    gap="8"
-                  >
-                    <Row gap="12" vertical="center">
-                      <Row className="home-skill-stat-orb" vertical="center" horizontal="center">
-                        <Text variant="heading-strong-m" onBackground="brand-strong">
-                          {item.value}
-                        </Text>
-                      </Row>
-                      <Column gap="2">
-                        <Text variant="heading-strong-s">
-                          {item.label}
-                        </Text>
-                        <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {item.detail}
-                        </Text>
-                      </Column>
-                    </Row>
-                  </Column>
-                ))}
-              </Row>
-
-              <Column fillWidth gap="12">
+            <Column fillWidth gap="12">
                 {homeSkillGroups.map((group, index) => (
                   <Column
                     key={group.title}
@@ -542,7 +542,6 @@ export default function Home() {
                     </Row>
                   </Column>
                 ))}
-              </Column>
             </Column>
           </HomeSection>
 
