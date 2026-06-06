@@ -102,7 +102,7 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
-              Bangalore
+              Bangalore, Karnataka — 560076
             </Row>
             <Column gap="4" horizontal="center">
               <SmartLink href={`mailto:${person.email}`} style={{ margin: "0" }}>

@@ -18,9 +18,9 @@ import {
 import { home, about, person, baseURL } from "@/resources";
 import { IconName } from "@/resources/icons";
 
-const portfolioTitle = "Bharath M N | Software Developer";
+const portfolioTitle = "Bharath M N | Software Engineer - SDE";
 const portfolioDescription =
-  "Software Developer with 4+ years of experience building scalable web applications with Node.js, TypeScript, React, Next.js, and Astro.";
+  "Software Engineer with 4+ years of experience building scalable full-stack applications and distributed systems with React, Next.js, Node.js, TypeScript, and microservices architecture.";
 
 type HomeExperience = {
   company: string;
@@ -31,7 +31,7 @@ type HomeExperience = {
 
 const homeWorkExperiences: HomeExperience[] = [
   {
-    company: "Codewave Technologies Private Limited",
+    company: "Codewave Technologies",
     timeframe: "Apr 2025 — Present",
     role: "Software Developer",
     achievements: [
@@ -46,7 +46,7 @@ const homeWorkExperiences: HomeExperience[] = [
     ],
   },
   {
-    company: "Winline Technologies Private Limited",
+    company: "Winline Technologies",
     timeframe: "Feb 2024 — Mar 2025",
     role: "Software Developer",
     achievements: [
@@ -57,21 +57,9 @@ const homeWorkExperiences: HomeExperience[] = [
     ],
   },
   {
-    company: "Upgradableweb Technologies",
-    timeframe: "Apr 2023 — Jan 2024",
-    role: "Full Stack Developer",
-    achievements: [
-      <>
-        Developed high-performance Next.js projects with server-side rendering (SSR).
-      </>,
-      <>Built responsive UIs using Tailwind CSS.</>,
-      <>Implemented API routes and authentication flows in Node.js applications.</>,
-    ],
-  },
-  {
     company: "Plausibility Solutions",
-    timeframe: "Aug 2022 — Mar 2023",
-    role: "Junior Frontend Developer",
+    timeframe: "Aug 2022 — Jan 2024",
+    role: "Frontend Developer",
     achievements: [
       <>
         Built scalable, responsive UIs using JavaScript, TypeScript, and React.
@@ -95,25 +83,15 @@ type HomeSkillGroup = {
 };
 
 const homeSkillStats = [
-  { value: "50+", label: "Tools & skills", detail: "Across frontend, backend, cloud, and delivery" },
-  { value: "4+", label: "Years applying them", detail: "Production web development experience" },
-  { value: "10+", label: "Featured projects", detail: "Shipped product and portfolio builds" },
+  { value: "40+", label: "Tools & skills", detail: "Across frontend, backend, cloud, and delivery" },
+  { value: "4+", label: "Years applying them", detail: "Production full-stack development experience" },
+  { value: "2", label: "Featured projects", detail: "Shipped SaaS and AI agent builds" },
 ] as const;
 
 const homeSkillGroups: HomeSkillGroup[] = [
   {
-    title: "Core Languages",
-    description: "The languages I use to build product logic, interfaces, services, and automation.",
-    skills: [
-      { label: "JavaScript", variant: "accent", icon: "javascript" },
-      { label: "TypeScript", variant: "brand", icon: "javascript" },
-      { label: "Node.js", variant: "neutral" },
-      { label: "Python", variant: "accent" },
-    ],
-  },
-  {
     title: "Frontend",
-    description: "Fast, responsive product interfaces with polished interaction details.",
+    description: "Product interfaces built with modern React ecosystems and design systems.",
     skills: [
       { label: "React.js", variant: "brand", icon: "react" },
       { label: "Next.js", variant: "accent", icon: "nextjs" },
@@ -121,70 +99,56 @@ const homeSkillGroups: HomeSkillGroup[] = [
       { label: "Redux Toolkit", variant: "neutral" },
       { label: "Tailwind CSS", variant: "neutral" },
       { label: "Material UI", variant: "brand" },
-      { label: "Animations", variant: "accent" }
     ],
   },
   {
-    title: "Backend & APIs",
-    description: "Production APIs, auth flows, real-time features, and service integrations.",
+    title: "Backend",
+    description: "APIs, auth, data modeling, and service integrations for production systems.",
     skills: [
       { label: "Node.js", variant: "neutral" },
-      { label: "Express", variant: "brand", icon: "express" },
-      { label: "Django", variant: "neutral" },
+      { label: "Express.js", variant: "brand", icon: "express" },
+      { label: "FastAPI", variant: "accent" },
       { label: "JWT", variant: "accent" },
       { label: "Mongoose", variant: "brand" },
-      { label: "REST APIs", variant: "brand", icon: "rest" },
-      { label: "GraphQL", variant: "accent" },
-      { label: "WebSockets", variant: "neutral" },
+      { label: "OpenAPI", variant: "neutral" },
+      { label: "Swagger", variant: "brand" },
+      { label: "Postman", variant: "neutral" },
     ],
   },
   {
-    title: "Cloud & Data",
-    description: "Deployments, databases, storage, and cloud services for web products.",
+    title: "Core",
+    description: "The languages used across frontend, backend, and automation workflows.",
+    skills: [
+      { label: "TypeScript", variant: "brand", icon: "javascript" },
+      { label: "JavaScript", variant: "accent", icon: "javascript" },
+      { label: "Node.js", variant: "neutral" },
+      { label: "Python", variant: "accent" },
+    ],
+  },
+  {
+    title: "Cloud & Database",
+    description: "Cloud platforms, databases, and media services for scalable products.",
     skills: [
       { label: "AWS", variant: "neutral" },
       { label: "GCP", variant: "accent" },
-      { label: "Vercel", variant: "brand" },
-      { label: "Netlify", variant: "neutral" },
-      { label: "Cloudinary", variant: "accent" },
+      { label: "Azure", variant: "brand" },
       { label: "MongoDB", variant: "brand" },
       { label: "Redis", variant: "neutral" },
       { label: "MySQL", variant: "accent" },
-      { label: "PostgreSQL", variant: "brand" },
+      { label: "Cloudinary", variant: "accent" },
     ],
   },
   {
-    title: "Architecture & Quality",
-    description: "Scalable architecture, testing discipline, performance, and delivery workflows.",
+    title: "API & DevOps",
+    description: "API patterns, real-time communication, and delivery infrastructure.",
     skills: [
-      { label: "Microservices", variant: "brand" },
-      { label: "Micro-Frontend", variant: "accent" },
-      { label: "MCP", variant: "neutral" },
-      { label: "Jest", variant: "brand" },
-      { label: "Vitest", variant: "accent" },
-      { label: "Playwright", variant: "neutral" },
-      { label: "Cypress", variant: "brand" },
-      { label: "Unit & E2E Testing", variant: "accent" },
-      { label: "Docker", variant: "neutral" },
+      { label: "REST APIs", variant: "brand", icon: "rest" },
+      { label: "GraphQL", variant: "accent" },
+      { label: "WebSockets", variant: "neutral" },
+      { label: "Git", variant: "brand", icon: "github" },
       { label: "CI/CD", variant: "accent", icon: "rocket" },
-      { label: "GitHub", variant: "brand", icon: "github" },
-      { label: "GitLab", variant: "neutral" },
-    ],
-  },
-  {
-    title: "Web & Integrations",
-    description: "Search visibility, accessibility, performance, and third-party integrations.",
-    skills: [
-      { label: "SEO", variant: "brand" },
-      { label: "Schema Markup", variant: "accent" },
-      { label: "Accessibility", variant: "neutral" },
-      { label: "Optimization", variant: "brand" },
-      { label: "Web Performance", variant: "accent" },
-      { label: "Payment Gateways", variant: "neutral" },
-      { label: "Email Services", variant: "brand" },
-      { label: "SMS Services", variant: "accent" },
-      { label: "Analytics Services", variant: "neutral" },
-      { label: "Chat Services", variant: "brand" },
+      { label: "Docker", variant: "neutral" },
+      { label: "Kubernetes", variant: "brand" },
     ],
   },
 ];
@@ -201,42 +165,18 @@ const homeFeaturedProjects: HomeFeaturedProject[] = [
   {
     title: "Healthcare SAAS",
     description:
-      "UI based project built on React.js, Vite, Tailwind CSS. Deployed using GitHub and Netlify.",
+      "UI-focused project built with React.js, Node.js, and Tailwind CSS.",
     href: "https://healthcare-saas-789.netlify.app/login?user=demo",
     category: "SaaS Interface",
-    stack: ["React.js", "Vite", "Tailwind CSS", "Netlify"],
+    stack: ["React.js", "Node.js", "Tailwind CSS"],
   },
   {
     title: "AI Assistant",
     description:
-      "Built with Astro.js, React.js, Vite, Tailwind CSS, Google Agent Development Kit (ADK). CI/CD using GitHub and Vercel.",
-    href: "https://bmn789.vercel.app",
+      "Built with React.js, Python, Google Agent Development Kit (ADK), LLM orchestration, and RAG-style agent workflows. CI/CD using GitHub and Vercel.",
+    href: "https://agent-b7.vercel.app",
     category: "AI Product",
-    stack: ["Astro.js", "React.js", "Google ADK", "Vercel"],
-  },
-  {
-    title: "GearX AI",
-    description:
-      "Project consists of User module and Admin module. Built with React.js, Next.js, Tailwind CSS and MUI. CI/CD using GitLab and AWS.",
-    href: "https://gearx.ai",
-    category: "AI Platform",
-    stack: ["React.js", "Next.js", "MUI", "AWS"],
-  },
-  {
-    title: "My Dream Paints",
-    description:
-      "UI based project built on Next.js, Tailwind CSS. Deployed using GitHub and Vercel.",
-    href: "https://www.mydreampaints.com",
-    category: "Brand Website",
-    stack: ["Next.js", "JavaScript", "Tailwind CSS", "Vercel"],
-  },
-  {
-    title: "MKS Foods",
-    description:
-      "Built and optimized in React.js, Next.js, Tailwind CSS. CI/CD using GitHub and Netlify.",
-    href: "https://mksfoods.in",
-    category: "Business Website",
-    stack: ["React.js", "Next.js", "Tailwind CSS", "Netlify"],
+    stack: ["React.js", "Python", "Google ADK", "Vercel"],
   },
 ];
 
@@ -279,25 +219,10 @@ type HomeUpskill = {
 
 const homeCurrentUpskills: HomeUpskill[] = [
   {
-    title: "GitHub Copilot",
-    description: "Copilot Fundamentals",
-    href: "https://learn.microsoft.com/",
-    linkLabel: "Microsoft Learn",
-  },
-  {
-    title: "AI Assistants",
-    description: "Conversational AI and agents development with Google Agent Development Kit (ADK)",
+    title: "Conversational agents development",
+    description: "Google Agent Development Kit (ADK)",
     href: "https://adk.dev/",
-    linkLabel: "ADK",
-  },
-  {
-    title: "AI Augmented Coding",
-    description:
-      "AI pair programming for code generation and test writing (Cursor, Claude, Codex, ChatGPT).",
-  },
-  {
-    title: "System Design",
-    description: "Scalable architectures and distributed systems",
+    linkLabel: "Google Agent Development Kit",
   },
 ];
 
@@ -448,24 +373,12 @@ export default function Home() {
               {home.subline}
             </Text> */}
           <Text onBackground="neutral-weak" variant="body-default-m" align="center">
-            Software Developer with{" "}
+            I have over{" "}
             <Text as="span" onBackground="info-strong">
-              4+ years
+              4 years
             </Text>{" "}
-            of experience building scalable, high-performance web applications, with a strong
-            focus on systems using{" "}
-            <Text as="span" onBackground="info-strong">
-              Node.js
-            </Text>
-            . Proficient in designing RESTful APIs,{" "}
-            <Text as="span" onBackground="info-strong">
-              microservices
-            </Text>
-            , and real-time architectures. Skilled in{" "}
-            <Text as="span" onBackground="info-strong">
-              TypeScript
-            </Text>
-            ,{" "}
+            of experience building scalable full-stack applications and distributed systems. My core
+            expertise is in{" "}
             <Text as="span" onBackground="info-strong">
               React.js
             </Text>
@@ -475,21 +388,18 @@ export default function Home() {
             </Text>
             ,{" "}
             <Text as="span" onBackground="info-strong">
-              Express.js
+              Node.js
             </Text>
             ,{" "}
             <Text as="span" onBackground="info-strong">
-              Astro.js
+              TypeScript
             </Text>
-            . Strong expertise in{" "}
+            , and{" "}
             <Text as="span" onBackground="info-strong">
-              system design
-            </Text>
-            ,{" "}
-            <Text as="span" onBackground="info-strong">
-              performance optimization
-            </Text>
-            , and AI-augmented development using ChatGPT, Cursor, Claude AI, and GitHub Copilot.
+              Microservices
+            </Text>{" "}
+            architecture. More recently, I've been working on AI-driven applications involving LLMs,
+            agents, and RAG architectures.
           </Text>
         </RevealFx>
 
@@ -586,7 +496,7 @@ export default function Home() {
                   2018 — 2022
                 </Tag>
                 <Tag size="m" variant="neutral">
-                  Bangalore, Karnataka
+                  Bangalore, Karnataka — 560076
                 </Tag>
                 <Tag size="m" variant="accent">
                   Engineering Foundation
@@ -738,7 +648,7 @@ export default function Home() {
             </Column>
           </HomeSection>
 
-          <HomeSection title="Upskills">
+          <HomeSection title="Certificates & Upskills">
 
             <Column fillWidth gap="16">
               {homeCurrentUpskills.map((item, index) => (
@@ -890,7 +800,7 @@ export default function Home() {
                       Let&apos;s build your next production-ready web experience.
                     </Heading>
                     <Text variant="body-default-m" onBackground="neutral-weak">
-                      Frontend, full-stack, AI assistant, performance, and product engineering work.
+                      Frontend, full-stack, microservices, AI agents, and product engineering work.
                       Quick response time, usually within 24 hours.
                     </Text>
                   </Column>

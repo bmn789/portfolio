@@ -2,10 +2,10 @@ import { About, Blog, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Barath",
-  lastName: "Nethra",
-  name: `Barath Nethra`,
-  role: "Software Development Engineer - SDE",
+  firstName: "Bharath",
+  lastName: "M N",
+  name: `Bharath M N`,
+  role: "Software Engineer - SDE | 4+ Years Experience",
   avatar: "/images/barath.png",
   email: "bmn7892@gmail.com",
   location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -48,12 +48,12 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building Cutting Edge UI for Software Products</>,
+  headline: <>Frontend Engineering • Microservices • Agents • Product Engineering</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Agent_B7</strong>{" "}
+        <strong className="ml-4">AI Assistant</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
@@ -64,7 +64,9 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Barath Nethra, a SDE at <Text as="span" weight="strong">Codewave Technologies</Text>, where I craft intuitive user experiences.
+      I'm Bharath M N, a Software Engineer at{" "}
+      <Text as="span" weight="strong">Codewave Technologies</Text>, building scalable full-stack
+      applications and AI-driven agent workflows.
     </>
   ),
 };
@@ -73,7 +75,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, a Software Developer building scalable web applications with Node.js, TypeScript, React, Next.js, and Astro.`,
+  description: `Meet ${person.name}, a Software Engineer building scalable full-stack applications with React, Next.js, Node.js, TypeScript, and microservices architecture.`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -90,126 +92,83 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I'm Barath Nethra, also known professionally as Bharath M N, a Software Developer with
-        4+ years of experience building scalable, high-performance web applications with a strong
-        focus on Node.js systems. I design RESTful APIs, microservices, and real-time architectures
-        across backend and frontend layers, and I actively use ChatGPT, Cursor, Claude AI, and
-        GitHub Copilot to accelerate development, reviews, documentation, and architecture work.
+        I have over 4 years of experience building scalable full-stack applications and distributed
+        systems. My core expertise is in React.js, Next.js, Node.js, TypeScript, and Microservices
+        architecture. Throughout my career, I've designed frontend platforms, backend APIs, messaging
+        systems, and CI/CD workflows while focusing on performance, maintainability, and scalability.
+        More recently, I've been working on AI-driven applications involving LLMs, agents, and RAG
+        architectures. I'm looking for opportunities where I can contribute to large-scale products
+        and continue growing as a software engineer.
       </>
     ),
   },
   work: {
-    display: false, // set to false to hide this section
+    display: false,
     title: "Work Experience",
     experiences: [],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: false,
     title: "Education",
-    institutions: [
-      {
-        name: "Visvesvaraya Technological University",
-        description: (
-          <>
-            Bachelor of Engineering in Electronics and Communication Engineering, 2018 — 2022.
-            CGPA: 8.0.
-          </>
-        ),
-      },
-    ],
+    institutions: [],
   },
   technical: {
     display: true, // set to false to hide this section
     title: "Technical Skills",
     skills: [
       {
-        title: "Core & Frontend",
+        title: "Frontend",
         description: (
-          <>
-            JavaScript, TypeScript, Python, React.js, Next.js, Astro.js, Redux Toolkit, Tailwind
-            CSS, Material UI, and animations.
-          </>
+          <>React.js, Next.js, Astro.js, Redux Toolkit, Tailwind CSS, Material UI</>
         ),
         tags: [
-          {
-            name: "TypeScript",
-            icon: "javascript",
-          },
-          {
-            name: "React.js",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
+          { name: "React.js", icon: "javascript" },
+          { name: "Next.js", icon: "nextjs" },
+          { name: "Tailwind CSS" },
         ],
         images: [],
       },
       {
-        title: "Backend & APIs",
+        title: "Backend",
         description: (
           <>
-            Node.js, Express.js, Django, JWT, Mongoose, REST APIs, GraphQL, WebSockets, payment
-            gateways, email services, SMS services, analytics services, and chat services.
+            Node.js, Express.js, FastAPI, JWT, Mongoose, OpenAPI, Swagger, Postman
           </>
         ),
         tags: [
-          {
-            name: "Node.js",
-          },
-          {
-            name: "Express",
-          },
-          {
-            name: "REST APIs",
-            icon: "rocket",
-          },
+          { name: "Node.js" },
+          { name: "Express" },
+          { name: "FastAPI" },
         ],
         images: [],
       },
       {
-        title: "Cloud, Data & Delivery",
-        description: (
-          <>
-            AWS, GCP, Vercel, Netlify, Cloudinary, MongoDB, Redis, MySQL, PostgreSQL, Docker,
-            CI/CD, GitHub, GitLab, and version control.
-          </>
-        ),
+        title: "Core",
+        description: <>TypeScript, JavaScript, Node.js, Python</>,
         tags: [
-          {
-            name: "GitHub",
-            icon: "github",
-          },
-          {
-            name: "CI/CD",
-            icon: "rocket",
-          },
-          {
-            name: "TDD",
-          },
+          { name: "TypeScript", icon: "javascript" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "Python" },
         ],
         images: [],
       },
       {
-        title: "Architecture, Testing & Web Quality",
-        description: (
-          <>
-            Microservices, micro-frontends, MCP, Jest, Vitest, Playwright, Cypress, unit and E2E
-            testing, SEO, schema markup, accessibility, optimization, and web performance.
-          </>
-        ),
+        title: "Cloud & Database",
+        description: <>AWS, GCP, Azure, MongoDB, Redis, MySQL, Cloudinary</>,
         tags: [
-          {
-            name: "Microservices",
-          },
-          {
-            name: "Testing",
-          },
-          {
-            name: "Web Performance",
-            icon: "rocket",
-          },
+          { name: "AWS" },
+          { name: "MongoDB" },
+          { name: "Redis" },
+        ],
+        images: [],
+      },
+      {
+        title: "API & DevOps",
+        description: <>REST APIs, GraphQL, WebSockets, Git, CI/CD, Docker, Kubernetes</>,
+        tags: [
+          { name: "REST APIs", icon: "rocket" },
+          { name: "GraphQL" },
+          { name: "Docker" },
         ],
         images: [],
       },
@@ -217,45 +176,13 @@ const about: About = {
   },
   upskills: {
     display: true,
-    title: "Certificates & Upskills",
+    title: "Upskills",
     items: [
       {
-        title: "AI Upskilling Certificate",
-        description: <>Qualcomm</>,
-        href: "https://drive.google.com/file/d/1a9C-TGMMkuEZQNqULYielBqSZWX8Lyjp/view?usp=sharing",
-        linkLabel: "View certificate",
-      },
-      {
-        title: "Prompt Engineering / LLM / RAG",
-        description: <>Simplilearn</>,
-        href: "https://drive.google.com/file/d/1itNIIE_gjJNqyjnGQDfmZo8FIIRipg-H/view?usp=sharing",
-        linkLabel: "View certificate",
-      },
-      {
-        title: "Advanced Prompt Engineering with ChatGPT",
-        description: <>UpGrad</>,
-        href: "https://drive.google.com/file/d/1-PsSo5ro7Rdju3y_he327J2LOFJHT6Vy/view?usp=sharing",
-        linkLabel: "View certificate",
-      },
-      {
-        title: "GitHub Copilot",
-        description: <>Copilot Fundamentals</>,
-        href: "https://learn.microsoft.com/",
-        linkLabel: "Microsoft Learn",
-      },
-      {
-        title: "AI Assistants",
-        description: <>Conversational AI and agents development using Google Agent Development Kit (ADK)</>,
+        title: "Conversational agents development",
+        description: <>Google Agent Development Kit</>,
         href: "https://adk.dev/",
-        linkLabel: "Google Agent Development Kit (ADK)",
-      },
-      {
-        title: "AI Augmented Coding",
-        description: <>AI pair programming for code generation and test writing using Cursor, Claude, Codex, and ChatGPT</>,
-      },
-      {
-        title: "System Design",
-        description: <>Scalable architectures and distributed systems</>,
+        linkLabel: "Google Agent Development Kit",
       },
     ],
   },
