@@ -90,8 +90,8 @@ const homeSkillStats = [
 
 const homeSkillGroups: HomeSkillGroup[] = [
   {
-    title: "Frontend",
-    description: "Product interfaces built with modern React ecosystems and design systems.",
+    title: "All Skills",
+    description: "Languages, frameworks, databases, and tools.",
     skills: [
       { label: "React.js", variant: "brand", icon: "react" },
       { label: "Next.js", variant: "accent", icon: "nextjs" },
@@ -99,12 +99,6 @@ const homeSkillGroups: HomeSkillGroup[] = [
       { label: "Redux Toolkit", variant: "neutral" },
       { label: "Tailwind CSS", variant: "neutral" },
       { label: "Material UI", variant: "brand" },
-    ],
-  },
-  {
-    title: "Backend",
-    description: "APIs, auth, data modeling, and service integrations for production systems.",
-    skills: [
       { label: "Node.js", variant: "neutral" },
       { label: "Express.js", variant: "brand", icon: "express" },
       { label: "FastAPI", variant: "accent" },
@@ -113,22 +107,9 @@ const homeSkillGroups: HomeSkillGroup[] = [
       { label: "OpenAPI", variant: "neutral" },
       { label: "Swagger", variant: "brand" },
       { label: "Postman", variant: "neutral" },
-    ],
-  },
-  {
-    title: "Core",
-    description: "The languages used across frontend, backend, and automation workflows.",
-    skills: [
       { label: "TypeScript", variant: "brand", icon: "javascript" },
       { label: "JavaScript", variant: "accent", icon: "javascript" },
-      { label: "Node.js", variant: "neutral" },
       { label: "Python", variant: "accent" },
-    ],
-  },
-  {
-    title: "Cloud & Database",
-    description: "Cloud platforms, databases, and media services for scalable products.",
-    skills: [
       { label: "AWS", variant: "neutral" },
       { label: "GCP", variant: "accent" },
       { label: "Azure", variant: "brand" },
@@ -136,12 +117,6 @@ const homeSkillGroups: HomeSkillGroup[] = [
       { label: "Redis", variant: "neutral" },
       { label: "MySQL", variant: "accent" },
       { label: "Cloudinary", variant: "accent" },
-    ],
-  },
-  {
-    title: "API & DevOps",
-    description: "API patterns, real-time communication, and delivery infrastructure.",
-    skills: [
       { label: "REST APIs", variant: "brand", icon: "rest" },
       { label: "GraphQL", variant: "accent" },
       { label: "WebSockets", variant: "neutral" },
@@ -165,15 +140,15 @@ const homeFeaturedProjects: HomeFeaturedProject[] = [
   {
     title: "Healthcare SAAS",
     description:
-      "UI-focused project built with React.js, Node.js, and Tailwind CSS.",
+      "UI-focused dashboard project built with React.js, Node.js, Firebase and Tailwind CSS.",
     href: "https://healthcare-saas-789.netlify.app/login?user=demo",
     category: "SaaS Interface",
-    stack: ["React.js", "Node.js", "Tailwind CSS"],
+    stack: ["React.js", "Node.js", "Firebase", "Tailwind CSS"],
   },
   {
     title: "AI Assistant",
     description:
-      "Built with React.js, Python, Google Agent Development Kit (ADK), LLM orchestration, and RAG-style agent workflows. CI/CD using GitHub and Vercel.",
+      "Built with React.js, Python, Google Agent Development Kit (ADK), LLM orchestration, and RAG-style agent workflows. CI/CD using GitHub & Vercel.",
     href: "https://agent-b7.vercel.app",
     category: "AI Product",
     stack: ["React.js", "Python", "Google ADK", "Vercel"],
@@ -195,12 +170,6 @@ const homeCertificates: HomeCertificate[] = [
     imageSrc: "/certificates/qualcomm.png",
     verifyHref:
       "https://drive.google.com/file/d/1a9C-TGMMkuEZQNqULYielBqSZWX8Lyjp/view?usp=sharing",
-  },
-  {
-    program: "Prompt Engineering / LLM / RAG",
-    issuer: "Simplilearn",
-    imageSrc: "/certificates/simplilearn.png",
-    verifyHref: "https://drive.google.com/file/d/1itNIIE_gjJNqyjnGQDfmZo8FIIRipg-H/view?usp=sharing",
   },
   {
     program: "Advanced Prompt Engineering with ChatGPT",

@@ -97,8 +97,7 @@ const about: About = {
         architecture. Throughout my career, I've designed frontend platforms, backend APIs, messaging
         systems, and CI/CD workflows while focusing on performance, maintainability, and scalability.
         More recently, I've been working on AI-driven applications involving LLMs, agents, and RAG
-        architectures. I'm looking for opportunities where I can contribute to large-scale products
-        and continue growing as a software engineer.
+        architectures.
       </>
     ),
   },
@@ -117,58 +116,21 @@ const about: About = {
     title: "Technical Skills",
     skills: [
       {
-        title: "Frontend",
+        title: "All Skills",
         description: (
-          <>React.js, Next.js, Astro.js, Redux Toolkit, Tailwind CSS, Material UI</>
+          <>
+            React.js, Next.js, Astro.js, Redux Toolkit, Tailwind CSS, Material UI, Node.js, Express.js, FastAPI, JWT, Mongoose, OpenAPI, Swagger, Postman, TypeScript, JavaScript, Python, AWS, GCP, Azure, MongoDB, Redis, MySQL, Cloudinary, REST APIs, GraphQL, WebSockets, Git, CI/CD, Docker, Kubernetes
+          </>
         ),
         tags: [
           { name: "React.js", icon: "javascript" },
           { name: "Next.js", icon: "nextjs" },
-          { name: "Tailwind CSS" },
-        ],
-        images: [],
-      },
-      {
-        title: "Backend",
-        description: (
-          <>
-            Node.js, Express.js, FastAPI, JWT, Mongoose, OpenAPI, Swagger, Postman
-          </>
-        ),
-        tags: [
-          { name: "Node.js" },
-          { name: "Express" },
-          { name: "FastAPI" },
-        ],
-        images: [],
-      },
-      {
-        title: "Core",
-        description: <>TypeScript, JavaScript, Node.js, Python</>,
-        tags: [
           { name: "TypeScript", icon: "javascript" },
-          { name: "JavaScript", icon: "javascript" },
-          { name: "Python" },
-        ],
-        images: [],
-      },
-      {
-        title: "Cloud & Database",
-        description: <>AWS, GCP, Azure, MongoDB, Redis, MySQL, Cloudinary</>,
-        tags: [
+          { name: "Node.js" },
           { name: "AWS" },
           { name: "MongoDB" },
-          { name: "Redis" },
-        ],
-        images: [],
-      },
-      {
-        title: "API & DevOps",
-        description: <>REST APIs, GraphQL, WebSockets, Git, CI/CD, Docker, Kubernetes</>,
-        tags: [
-          { name: "REST APIs", icon: "rocket" },
-          { name: "GraphQL" },
-          { name: "Docker" },
+          { name: "CI/CD", icon: "rocket" },
+          { name: "Docker" }
         ],
         images: [],
       },
