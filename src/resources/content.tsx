@@ -119,7 +119,7 @@ const about: About = {
         title: "All Skills",
         description: (
           <>
-            React.js, Next.js, Astro.js, Redux Toolkit, Tailwind CSS, Material UI, Node.js, Express.js, FastAPI, JWT, Mongoose, OpenAPI, Swagger, Postman, TypeScript, JavaScript, Python, AWS, GCP, Azure, MongoDB, Redis, MySQL, Cloudinary, REST APIs, GraphQL, WebSockets, Git, CI/CD, Docker, Kubernetes
+            Node.js, TypeScript, React.js, Next.js, React Redux, Express.js, FastAPI, JWT, Mongoose, Tailwind CSS, Material UI, OpenAPI, Swagger, Postman, JavaScript, Python, AWS, GCP, Azure, MongoDB, Redis, SQL, NoSQL, MySQL, PostgreSQL, REST APIs, GraphQL, WebSockets, Git, GitHub, CI/CD, Docker, Kubernetes, Prompt Engineer, RAG, Agents, LLMs
           </>
         ),
         tags: [
@@ -130,7 +130,10 @@ const about: About = {
           { name: "AWS" },
           { name: "MongoDB" },
           { name: "CI/CD", icon: "rocket" },
-          { name: "Docker" }
+          { name: "Docker" },
+          { name: "LLMs" },
+          { name: "Agents" },
+          { name: "RAG" }
         ],
         images: [],
       },
