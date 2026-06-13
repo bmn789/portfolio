@@ -130,6 +130,8 @@ const certificates = [
 </script>
 
 <template>
+
+ 
   <div class="flex flex-col gap-16 w-full">
 
     <!-- Hero / Intro Section -->

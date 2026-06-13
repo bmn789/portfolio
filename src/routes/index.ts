@@ -4,6 +4,7 @@ import Home from "@/routes/Home.vue";
 import About from "./About.vue";
 import Work from "./Work.vue";
 import Blogs from "./Blogs.vue";
+import NotFound from "./NotFound.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -11,7 +12,8 @@ const router = createRouter({
     { path: "/", component: Home },
     { path: "/about", component: About },
     { path: "/work", component: Work },
-    { path: "/blogs", component: Blogs }
+    { path: "/blogs", component: Blogs },
+    { path: "/:pathMatch(.*)*", component: NotFound }
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
