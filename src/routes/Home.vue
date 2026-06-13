@@ -207,7 +207,7 @@ const certificates = [
 
       <!-- Bio Paragraph -->
       <p class="text-sm md:text-base text-text-secondary leading-relaxed max-w-6xl mt-12 px-2">
-        I have over <span class="text-text-primary font-bold border-b border-brand-strong/40 pb-0.5">4 years</span> of
+       Hi there 👋. I have over <span class="text-text-primary font-bold border-b border-brand-strong/40 pb-0.5">4 years</span> of
         experience building scalable full-stack applications and distributed systems. My core expertise is in
         <span class="text-text-primary font-semibold">React.js</span>,
         <span class="text-text-primary font-semibold">Next.js</span>,
