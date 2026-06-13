@@ -2,43 +2,17 @@
 import { ref } from 'vue';
 
 const skills = [
+  { name: 'Node.js', type: 'neutral' },
   { name: 'TypeScript', type: 'brand' },
   { name: 'React.js', type: 'brand' },
   { name: 'Next.js', type: 'accent' },
-  { name: 'Node.js', type: 'neutral' },
   { name: 'Express.js', type: 'brand' },
   { name: 'FastAPI', type: 'accent' },
-  { name: 'JavaScript', type: 'accent' },
   { name: 'Python', type: 'accent' },
-  { name: 'React Redux', type: 'neutral' },
-  { name: 'Tailwind CSS', type: 'neutral' },
-  { name: 'Material UI', type: 'brand' },
-  { name: 'JWT', type: 'accent' },
-  { name: 'Mongoose', type: 'brand' },
-  { name: 'OpenAPI', type: 'neutral' },
-  { name: 'Swagger', type: 'brand' },
-  { name: 'Postman', type: 'neutral' },
-  { name: 'AWS', type: 'neutral' },
-  { name: 'GCP', type: 'accent' },
-  { name: 'Azure', type: 'brand' },
   { name: 'MongoDB', type: 'brand' },
-  { name: 'Redis', type: 'neutral' },
-  { name: 'SQL', type: 'accent' },
-  { name: 'NoSQL', type: 'neutral' },
   { name: 'MySQL', type: 'accent' },
   { name: 'PostgreSQL', type: 'brand' },
-  { name: 'REST APIs', type: 'brand' },
-  { name: 'GraphQL', type: 'accent' },
-  { name: 'WebSockets', type: 'neutral' },
-  { name: 'Git', type: 'brand' },
-  { name: 'GitHub', type: 'accent' },
-  { name: 'CI/CD', type: 'accent' },
-  { name: 'Docker', type: 'neutral' },
-  { name: 'Kubernetes', type: 'brand' },
-  { name: 'Prompt Engineer', type: 'brand' },
-  { name: 'RAG', type: 'accent' },
-  { name: 'Agents', type: 'neutral' },
-  { name: 'LLMs', type: 'brand' }
+  { name: 'AI-Agents', type: 'brand' }
 ];
 
 const experiences = [
@@ -238,7 +212,7 @@ const certificates = [
           </div>
           <span
             class="px-2.5 py-0.5 bg-brand-weak border border-brand-strong/15 text-brand-text text-[11px] font-bold rounded-full">
-            37 skills
+            {{ skills.length }} skills
           </span>
         </div>
 
@@ -377,14 +351,29 @@ const certificates = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div v-for="project in projects" :key="project.title"
-          class="bg-bg-card border border-border-weak hover:border-brand-strong/40 hover:-translate-y-1.5 hover:shadow-lg rounded-2xl overflow-hidden flex flex-col transition-all duration-300 group">
-          <!-- Image Zoom -->
+          class="bg-bg-card/75 backdrop-blur-xs border border-border-weak hover:border-brand-strong/50 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.15)] hover:-translate-y-2 rounded-2xl overflow-hidden flex flex-col transition-all duration-500 group">
+          <!-- Image Zoom & Overlays -->
           <div class="aspect-video w-full overflow-hidden bg-neutral-weak relative border-b border-border-weak">
-            <img :src="project.image" :alt="project.title"
-              class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
-            <!-- Ambient hover dark overlay -->
-            <div class="absolute inset-0 bg-neutral-900/10 group-hover:bg-neutral-900/0 transition-colors duration-300">
+            <!-- Floating Top Badges -->
+            <div class="absolute top-3 inset-x-3 flex items-center justify-between z-20 pointer-events-none">
+              <span class="px-2.5 py-0.5 bg-bg-card/90 backdrop-blur-md border border-border-weak rounded-md text-[9px] font-bold uppercase tracking-wider text-text-secondary shadow-xs">
+                Production View
+              </span>
+              <div class="w-7 h-7 rounded-full bg-bg-card/90 backdrop-blur-md border border-border-weak flex items-center justify-center text-text-secondary group-hover:text-brand group-hover:border-brand-strong/50 group-hover:scale-110 shadow-xs transition-all duration-300">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                </svg>
+              </div>
             </div>
+
+            <img :src="project.image" :alt="project.title"
+              class="w-full h-full object-cover group-hover:scale-[1.05] transition-all duration-700 ease-out" />
+            
+            <!-- Diagonal Sheen reflection sweep -->
+            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none z-10"></div>
+            
+            <!-- Ambient hover brand gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-brand/10 to-transparent opacity-85 group-hover:opacity-30 transition-opacity duration-500 z-5"></div>
           </div>
 
           <!-- Details -->
@@ -412,7 +401,7 @@ const certificates = [
             <div class="flex items-center justify-between gap-4 mt-auto pt-3 border-t border-border-weak/40 text-xs">
               <span class="text-text-muted font-mono tracking-tight text-[11px]">{{ project.displayUrl }}</span>
               <a :href="project.url" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center gap-1 text-brand-text hover:text-brand font-semibold group/link">
+                class="inline-flex items-center gap-1 px-3 py-1 border border-brand-strong/35 hover:border-brand-strong/70 bg-brand-weak/20 hover:bg-brand-medium/40 text-brand-text hover:text-brand font-bold rounded-full transition-all duration-200 text-xs group/link">
                 View project
                 <svg
                   class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-200"

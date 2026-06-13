@@ -7,13 +7,19 @@
     <title>Bharath MN - SDE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        body {
+            font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+        }
+
         .section-title {
             font-size: 1.2rem;
             line-height: 1.75rem;
             font-weight: 600;
             color: #0f172a;
-            /* border-bottom: 2px solid #88b5fd; */
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 4px;
             margin-bottom: 0.75rem;
+
         }
 
         @media print {
@@ -26,21 +32,24 @@
 </head>
 
 <body class="max-w-4xl mx-auto">
-    <header class=" pb-3 border-b border-black">
+    <header class="pb-2 border-b  border-black">
         <h1 class="text-5xl font-bold tracking-tight">Bharath M N</h1>
         <p class="text-lg md:text-xl font-semibold text-blue-700">Software Engineer - SDE | 4+ Years Experience</p>
+
+        <div class="flex gap-4">
+            <p><a href="mailto:bmn7892@gmail.com" class="hover:underline">bmn7892@gmail.com</a></p>
+            <p>+91 7892475321</p>
+            <p>Bangalore - 560076</p>
+        </div>
     </header>
 
     <!-- <hr class="mt-3 " /> -->
 
 
     <section class="mt-6">
-        <h2 class="section-title">Contact</h2>
+        <!-- <h2 class="section-title">Contact</h2> -->
         <div class="mt-3 space-y-1 text-slate-700">
-            <p><span class="font-medium text-slate-900">Email:</span> <a href="mailto:bmn7892@gmail.com"
-                    class="hover:underline">bmn7892@gmail.com</a></p>
-            <p><span class="font-medium text-slate-900">Mobile:</span> +917892475321</p>
-            <p><span class="font-medium text-slate-900">Location:</span> Bangalore, Karnataka - 560076</p>
+
             <p>
                 <span class="font-medium text-slate-900">Website :</span>
                 <a class="hover:underline" href="https://barathnethra.vercel.app" target="_blank"
@@ -61,7 +70,7 @@
 
     <section class="mt-6">
         <h2 class="section-title">Professional Summary</h2>
-        <div class="mt-3 text-slate-700">
+        <div class="text-slate-700">
             <p>
                 I have over 4 years of experience building scalable full-stack applications and distributed systems. My
                 core expertise is in React.js, Next.js, Node.js, TypeScript, and Microservices architecture. Throughout
@@ -134,14 +143,10 @@
 
 
     <section class="mt-6">
-        <h2 class="section-title">Technical Skills</h2>
+        <h2 class="section-title">Skills</h2>
         <div class="mt-3 text-slate-700">
-            <p>Node.js, TypeScript, React.js, Next.js, React Redux, Express.js, FastAPI, JWT,
-                Mongoose, Tailwind CSS, Material UI, OpenAPI, Swagger, Postman, JavaScript, Python, AWS, GCP, Azure,
-                MongoDB, Redis, SQL, NoSQL, MySQL, PostgreSQL, REST APIs, GraphQL, WebSockets, Git, GitHub, CI/CD,
-                Docker, Kubernetes, Prompt Engineer, RAG,
-                Agents, LLMs
-            </p>
+            <p>Node.js, TypeScript, React.js, Next.js, Express.js, FastAPI, Python, MongoDB, MySQL, PostgreSQL,
+                AI-Agents</p>
         </div>
     </section>
 
@@ -194,7 +199,7 @@
     <section class="mt-6">
         <h2 class="section-title">Featured Projects</h2>
 
-        <ol class="mt-3 text-sm leading-relaxed text-slate-700 list-decimal pl-6 space-y-4">
+        <ol class="mt-3 text-sm leading-relaxed text-slate-700 list-decimal pl-4 space-y-4">
             <li>
                 <span class="font-semibold">Healthcare SAAS</span>
                 — UI-focused dashboard project built with React.js, Node.js, Firebase and Tailwind CSS.
