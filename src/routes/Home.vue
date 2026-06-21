@@ -71,7 +71,7 @@ const experiences = [
 const projects = [
   {
     title: 'Healthcare SAAS',
-    description: 'UI-focused dashboard project built with React.js, Node.js, Firebase and Tailwind CSS.',
+    description: 'A customizable dashboard application built with React.js, Node.js, Firebase and Tailwind CSS.',
     url: 'https://healthcare-saas-789.netlify.app/login?user=demo',
     displayUrl: 'healthcare-saas-789.netlify.app',
     image: '/projects/healthcare-saas.png',
@@ -105,7 +105,7 @@ const certificates = [
 
 <template>
 
- 
+
   <div class="flex flex-col gap-16 w-full">
 
     <!-- Hero / Intro Section -->
@@ -183,7 +183,8 @@ const certificates = [
 
       <!-- Bio Paragraph -->
       <p class="text-sm md:text-base text-text-secondary leading-relaxed max-w-6xl mt-12 px-2">
-       Hi there 👋. I have over <span class="text-text-primary font-bold border-b border-brand-strong/40 pb-0.5">4 years</span> of
+        Hi there 👋. I have over <span class="text-text-primary font-bold border-b border-brand-strong/40 pb-0.5">4
+          years</span> of
         experience building scalable full-stack applications and distributed systems. My core expertise is in
         <span class="text-text-primary font-semibold">React.js</span>,
         <span class="text-text-primary font-semibold">Next.js</span>,
@@ -356,10 +357,12 @@ const certificates = [
           <div class="aspect-video w-full overflow-hidden bg-neutral-weak relative border-b border-border-weak">
             <!-- Floating Top Badges -->
             <div class="absolute top-3 inset-x-3 flex items-center justify-between z-20 pointer-events-none">
-              <span class="px-2.5 py-0.5 bg-bg-card/90 backdrop-blur-md border border-border-weak rounded-md text-[9px] font-bold uppercase tracking-wider text-text-secondary shadow-xs">
+              <span
+                class="px-2.5 py-0.5 bg-bg-card/90 backdrop-blur-md border border-border-weak rounded-md text-[9px] font-bold uppercase tracking-wider text-text-secondary shadow-xs">
                 Production View
               </span>
-              <div class="w-7 h-7 rounded-full bg-bg-card/90 backdrop-blur-md border border-border-weak flex items-center justify-center text-text-secondary group-hover:text-brand group-hover:border-brand-strong/50 group-hover:scale-110 shadow-xs transition-all duration-300">
+              <div
+                class="w-7 h-7 rounded-full bg-bg-card/90 backdrop-blur-md border border-border-weak flex items-center justify-center text-text-secondary group-hover:text-brand group-hover:border-brand-strong/50 group-hover:scale-110 shadow-xs transition-all duration-300">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                 </svg>
@@ -368,12 +371,16 @@ const certificates = [
 
             <img :src="project.image" :alt="project.title"
               class="w-full h-full object-cover group-hover:scale-[1.05] transition-all duration-700 ease-out" />
-            
+
             <!-- Diagonal Sheen reflection sweep -->
-            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none z-10"></div>
-            
+            <div
+              class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none z-10">
+            </div>
+
             <!-- Ambient hover brand gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-brand/10 to-transparent opacity-85 group-hover:opacity-30 transition-opacity duration-500 z-5"></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-brand/10 to-transparent opacity-85 group-hover:opacity-30 transition-opacity duration-500 z-5">
+            </div>
           </div>
 
           <!-- Details -->
@@ -421,16 +428,18 @@ const certificates = [
     <!-- Certificates & Upskills Section -->
     <section class="flex flex-col gap-6 relative z-10">
       <div class="flex flex-col items-center text-center gap-2">
-        <h2 class="text-xs font-bold text-text-muted uppercase tracking-widest font-display">Certificates & Upskills</h2>
+        <h2 class="text-xs font-bold text-text-muted uppercase tracking-widest font-display">Certificates & Upskills
+        </h2>
         <div class="w-8 h-[2.5px] bg-brand rounded-full"></div>
       </div>
 
       <!-- Upskill Card (ADK) -->
-      <div class="bg-bg-card border border-border-weak rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:border-brand-strong/30 hover:shadow-xs transition-all duration-300 relative">
+      <div
+        class="bg-bg-card border border-border-weak rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:border-brand-strong/30 hover:shadow-xs transition-all duration-300 relative">
         <div class="flex items-start gap-4 text-left">
           <!-- Index -->
           <span class="font-mono text-xs text-text-muted mt-1">
-            <img  src="/certificates/adk.png" alt="ADK Certificate" width="50" height="50" />
+            <img src="/certificates/adk.png" alt="ADK Certificate" width="50" height="50" />
           </span>
           <div class="flex flex-col gap-1.5">
             <h3 class="text-base sm:text-lg font-bold font-display text-text-primary leading-tight">
@@ -438,21 +447,19 @@ const certificates = [
             </h3>
             <span class="text-xs text-text-secondary">Google Agent Development Kit (ADK)</span>
             <!-- Tag -->
-            <span class="inline-flex items-center px-2 py-0.5 mt-1 rounded bg-neutral-weak text-[10px] font-bold text-text-muted uppercase tracking-wider w-fit">
+            <span
+              class="inline-flex items-center px-2 py-0.5 mt-1 rounded bg-neutral-weak text-[10px] font-bold text-text-muted uppercase tracking-wider w-fit">
               Upskill
             </span>
           </div>
         </div>
 
         <!-- Right Button -->
-        <a 
-          href="https://adk.dev/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="inline-flex items-center hover:bg-brand-weak gap-1.5 px-4 py-2 bg-bg-navbar border border-border-weak hover:border-brand-strong/40 text-[11px] font-semibold text-text-secondary hover:text-brand rounded-full shadow-xs transition-all duration-200 w-fit shrink-0 self-start sm:self-center group/link"
-        >
+        <a href="https://adk.dev/" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center hover:bg-brand-weak gap-1.5 px-4 py-2 bg-bg-navbar border border-border-weak hover:border-brand-strong/40 text-[11px] font-semibold text-text-secondary hover:text-brand rounded-full shadow-xs transition-all duration-200 w-fit shrink-0 self-start sm:self-center group/link">
           Google Agent Development Kit
-          <svg class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform duration-200" fill="none"
+            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </a>
@@ -460,40 +467,34 @@ const certificates = [
 
       <!-- Certificates Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div 
-          v-for="cert in certificates" 
-          :key="cert.title"
-          class="bg-bg-card border border-border-weak hover:border-brand-strong/30 hover:shadow-lg rounded-2xl overflow-hidden flex flex-col transition-all duration-300 group"
-        >
+        <div v-for="cert in certificates" :key="cert.title"
+          class="bg-bg-card border border-border-weak hover:border-brand-strong/30 hover:shadow-lg rounded-2xl overflow-hidden flex flex-col transition-all duration-300 group">
           <!-- Image Container -->
           <div class="w-full p-4 overflow-hidden bg-neutral-weak relative flex items-center justify-center">
-            <img 
-              :src="cert.image" 
-              :alt="cert.title" 
-              class="w-full h-full object-contain border border-gray-300 group-hover:scale-[1.02] transition-transform duration-500"
-            />
+            <img :src="cert.image" :alt="cert.title"
+              class="w-full h-full object-contain border border-gray-300 group-hover:scale-[1.02] transition-transform duration-500" />
           </div>
           <!-- Details -->
           <div class="p-5 flex flex-col gap-3.5 flex-1 text-left">
             <div class="flex justify-between items-center w-full">
-              <span class="px-2 py-0.5 bg-brand-weak border border-brand-strong/15 text-brand-text text-[9px] uppercase font-bold tracking-wider rounded">
+              <span
+                class="px-2 py-0.5 bg-brand-weak border border-brand-strong/15 text-brand-text text-[9px] uppercase font-bold tracking-wider rounded">
                 {{ cert.issuer }}
               </span>
-              <span class="px-2 py-0.5 bg-neutral-weak border border-neutral-strong/15 text-text-secondary text-[9px] uppercase font-bold tracking-wider rounded">
+              <span
+                class="px-2 py-0.5 bg-neutral-weak border border-neutral-strong/15 text-text-secondary text-[9px] uppercase font-bold tracking-wider rounded">
                 PDF
               </span>
             </div>
-            <h4 class="text-xs sm:text-sm font-bold font-display text-text-primary leading-snug group-hover:text-brand-text transition-colors duration-300">
+            <h4
+              class="text-xs sm:text-sm font-bold font-display text-text-primary leading-snug group-hover:text-brand-text transition-colors duration-300">
               {{ cert.title }}
             </h4>
-            <a 
-              :href="cert.url" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="inline-flex hover:bg-brand-weak items-center gap-1.5 px-4 py-2 bg-bg-navbar/30 border border-border-weak hover:border-brand-strong/40 text-[11px] font-semibold text-text-secondary hover:text-brand rounded-full shadow-xs transition-all duration-200 mt-auto ml-auto group/link"
-            >
+            <a :href="cert.url" target="_blank" rel="noopener noreferrer"
+              class="inline-flex hover:bg-brand-weak items-center gap-1.5 px-4 py-2 bg-bg-navbar/30 border border-border-weak hover:border-brand-strong/40 text-[11px] font-semibold text-text-secondary hover:text-brand rounded-full shadow-xs transition-all duration-200 mt-auto ml-auto group/link">
               View certificate
-              <svg class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <svg class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform duration-200" fill="none"
+                stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </a>
