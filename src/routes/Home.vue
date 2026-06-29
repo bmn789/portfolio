@@ -12,20 +12,20 @@ const skills = [
   { name: 'MongoDB', type: 'brand' },
   { name: 'MySQL', type: 'accent' },
   { name: 'PostgreSQL', type: 'brand' },
-  { name: 'AI-Agents', type: 'brand' }
+  { name: 'AWS', type: 'neutral' },
+  { name: 'AI-Assistance', type: 'brand' }
 ];
 
 const experiences = [
   {
     index: '01',
     company: 'Codewave Technologies',
-    role: 'Software Developer',
-    period: 'Apr 2025 — Present',
+    role: 'Software Engineer',
+    period: 'Apr 2025 — July 2026',
     bullets: [
-      'Built and optimized React.js and Next.js applications with reusable, scalable components.',
-      'Built instant messaging services and a multi-repository system.',
-      'Integrated REST and GraphQL APIs.',
-      'Contributed to CI/CD pipeline automation using GitLab and Azure DevOps.'
+      'Developed scalable backend services, REST APIs, authentication systems, and PostgreSQL databases using Node.js, Express.js, and FastAPI (Python).',
+      'Built real-time messaging services and microservices-based applications while integrating REST and GraphQL APIs.',
+      'Developed modern React.js, Next.js, and Vue.js applications and contributed to CI/CD automation using GitLab and Azure DevOps.'
     ],
     tags: [
       { text: 'Product delivery', variant: 'brand' },
@@ -39,10 +39,9 @@ const experiences = [
     role: 'Software Developer',
     period: 'Feb 2024 — Mar 2025',
     bullets: [
-      'Delivered full-stack Next.js applications with responsive React front ends.',
-      'Integrated REST APIs to power dynamic content experiences.',
-      'Improved SEO using meta tags and schema markup.',
-      'Collaborated with Python/Django APIs.'
+      'Developed full-stack applications with React.js, Next.js, and Node.js, building responsive user interfaces and scalable backend APIs.',
+      'Integrated REST APIs, optimized application performance and SEO, and ensured efficient data flow across systems.',
+      'Collaborated with Python/Django services to deliver reliable, production-ready solutions.'
     ],
     tags: [
       { text: 'Product delivery', variant: 'brand' },
@@ -56,9 +55,9 @@ const experiences = [
     role: 'Frontend Developer',
     period: 'Aug 2022 — Jan 2024',
     bullets: [
-      'Built scalable, responsive UIs using JavaScript, TypeScript, and React.',
-      'Implemented state management with Redux and the Context API.',
-      'Integrated APIs for reliable real-time data experiences.'
+      'Developed applications using React.js, TypeScript, and JavaScript, building responsive user interfaces.',
+      'Integrated Django REST APIs to enable dynamic data handling and improve application functionality.',
+      'Implemented efficient state management using Redux and the Context API while optimizing performance and user experience.'
     ],
     tags: [
       { text: 'Product delivery', variant: 'brand' },
@@ -183,15 +182,12 @@ const certificates = [
 
       <!-- Bio Paragraph -->
       <p class="text-sm md:text-base text-text-secondary leading-relaxed max-w-6xl mt-12 px-2">
-        Hi there 👋. I have over <span class="text-text-primary font-bold border-b border-brand-strong/40 pb-0.5">4
-          years</span> of
-        experience building scalable full-stack applications and distributed systems. My core expertise is in
-        <span class="text-text-primary font-semibold">React.js</span>,
-        <span class="text-text-primary font-semibold">Next.js</span>,
-        <span class="text-text-primary font-semibold">Node.js</span>,
-        <span class="text-text-primary font-semibold">TypeScript</span>, and
-        <span class="text-text-primary font-semibold">Microservices</span> architecture. More recently, I've been
-        working on AI-driven applications involving LLMs, agents, and RAG architectures.
+        Hi there 👋. I have over <span class="text-text-primary">4 years</span> of experience building scalable applications and distributed systems. My
+        expertise
+        includes <span class="text-text-primary">Node.js, FastAPI (Python), TypeScript, PostgreSQL, React.js, Next.js, Vue.js</span> and <span class="text-text-primary">Microservices</span>
+        architecture. Throughout my career, I've designed high-performance backend services, database schemas,
+        and UI implementations while contributing to team building, mentoring developers. I focus on building
+        scalable, maintainable, and high-performance software.
       </p>
     </section>
 
