@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  --color-bg-page: var(--bg-page);
+  --color-bg-card: var(--bg-card);
+  --color-bg-navbar: var(--bg-navbar);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-border-weak: var(--border-color-weak);
+  --color-border-strong: var(--border-color-strong);
+
+  --color-brand: var(--color-brand);
+  --color-brand-weak: var(--color-brand-weak);
+  --color-brand-medium: var(--color-brand-medium);
+  --color-brand-strong: var(--color-brand-strong);
+  --color-brand-text: var(--color-brand-text);
+
+  --color-accent: var(--color-accent);
+  --color-accent-weak: var(--color-accent-weak);
+  --color-accent-medium: var(--color-accent-medium);
+  --color-accent-strong: var(--color-accent-strong);
+  --color-accent-text: var(--color-accent-text);
+
+  --color-neutral: var(--color-neutral);
+  --color-neutral-weak: var(--color-neutral-weak);
+  --color-neutral-medium: var(--color-neutral-medium);
+  --color-neutral-strong: var(--color-neutral-strong);
+  --color-neutral-text: var(--color-neutral-text);
+}
+
+:root {
+  /* Fonts */
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  /* Theme variables - Light Mode */
+  --bg-page: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-navbar: rgba(255, 255, 255, 0.85);
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --border-color-weak: rgba(203, 213, 225, 0.7);
+  --border-color-strong: rgba(148, 163, 184, 0.6);
+
+  /* Brand Colors (Cyan/Teal) */
+  --color-brand: #0284c7;
+  --color-brand-weak: rgba(2, 132, 199, 0.08);
+  --color-brand-medium: rgba(2, 132, 199, 0.15);
+  --color-brand-strong: rgba(2, 132, 199, 0.3);
+  --color-brand-text: #0369a1;
+
+  /* Accent Colors (Purple/Pink) */
+  --color-accent: #8b5cf6;
+  --color-accent-weak: rgba(139, 92, 246, 0.08);
+  --color-accent-medium: rgba(139, 92, 246, 0.15);
+  --color-accent-strong: rgba(139, 92, 246, 0.3);
+  --color-accent-text: #7c3aed;
+
+  /* Neutral Colors */
+  --color-neutral: #64748b;
+  --color-neutral-weak: rgba(100, 116, 139, 0.08);
+  --color-neutral-medium: rgba(100, 116, 139, 0.15);
+  --color-neutral-strong: rgba(100, 116, 139, 0.3);
+  --color-neutral-text: #475569;
+}
+
+/* Dark Mode Overrides */
+html.dark {
+  --bg-page: #0b0f19;
+  --bg-card: rgba(17, 24, 39, 0.7);
+  --bg-navbar: rgba(15, 23, 42, 0.8);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+
+  --border-color-weak: rgba(51, 65, 85, 0.6);
+  --border-color-strong: rgba(71, 85, 105, 0.7);
+
+  /* Brand Colors (Electric Cyan) */
+  --color-brand: #38bdf8;
+  --color-brand-weak: rgba(56, 189, 248, 0.12);
+  --color-brand-medium: rgba(56, 189, 248, 0.2);
+  --color-brand-strong: rgba(56, 189, 248, 0.4);
+  --color-brand-text: #38bdf8;
+
+  /* Accent Colors (Vibrant Fuchsia/Purple) */
+  --color-accent: #c084fc;
+  --color-accent-weak: rgba(192, 132, 252, 0.12);
+  --color-accent-medium: rgba(192, 132, 252, 0.2);
+  --color-accent-strong: rgba(192, 132, 252, 0.4);
+  --color-accent-text: #c084fc;
+
+  /* Neutral Colors */
+  --color-neutral: #94a3b8;
+  --color-neutral-weak: rgba(148, 163, 184, 0.1);
+  --color-neutral-medium: rgba(148, 163, 184, 0.2);
+  --color-neutral-strong: rgba(148, 163, 184, 0.4);
+  --color-neutral-text: #cbd5e1;
+}
+
+/* Smooth transitions for global elements */
+html,
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+/* Dot Grid Pattern Overlay */
+.bg-dot-grid {
+  background-image: radial-gradient(var(--border-color-strong) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  opacity: 0.18;
+}
+
+html.dark .bg-dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  opacity: 0.25;
+}
+
+/* Ambient glow blobs */
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+  animation: float-slow 12s ease-in-out infinite alternate;
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.08);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+.animate-glow {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+}
+
+.animate-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(56, 189, 248, 0.3) 20%,
+      rgba(236, 72, 153, 0.5) 50%,
+      rgba(168, 85, 247, 0.3) 80%,
+      transparent);
+  transform: skewX(-20deg);
+  animation: lightning-sweep 3.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes lightning-sweep {
+  0% {
+    left: -150%;
+  }
+  30% {
+    left: 200%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* Scrollbar customizations */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color-strong);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Header Navigation Styles */
+.nav-link {
+  @apply p-2 rounded-full hover:bg-brand-medium text-text-secondary transition-all duration-200;
+}
+
+.nav-link-text {
+  @apply px-3 py-1 rounded-full hover:bg-brand-medium text-xs sm:text-sm text-text-secondary hover:text-text-primary transition-all duration-200 flex items-center gap-1.5 font-medium;
+}
+
+.active-link {
+  @apply font-semibold bg-gradient-to-r from-sky-500/20 via-purple-500/20 to-pink-500/20 text-text-primary border border-sky-500/30 shadow-xs;
+}
