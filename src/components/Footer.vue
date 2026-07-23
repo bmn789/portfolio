@@ -67,14 +67,9 @@ const copyEmail = () => {
     <ContactCard />
 
     <!-- Main Footer Container (Plain integrated layout without card container) -->
-    <footer class="mt-12 pt-10 pb-8 border-t border-purple-500/20 relative z-10 w-full overflow-hidden group/footer">
+    <footer class="mt-12 pt-10 border-t border-purple-500/20 relative z-10 w-full overflow-hidden group/footer">
       
-      <!-- Background Ambient Typography Watermark (Visible on mobile & desktop) -->
-      <div class="absolute -bottom-2 sm:-bottom-4 left-1/2 -translate-x-1/2 select-none pointer-events-none opacity-20 sm:opacity-25 group-hover/footer:opacity-35 transition-all duration-700 whitespace-nowrap z-0">
-        <span class="font-display font-black text-[54px] min-[400px]:text-[68px] sm:text-[120px] lg:text-[160px] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-purple-400 to-pink-500 uppercase drop-shadow-[0_0_35px_rgba(168,85,247,0.4)] animate-gradient-text">
-          BHARATH M N
-        </span>
-      </div>
+    
 
       <!-- Main Columns Grid -->
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 py-8 border-b border-purple-500/15 relative z-10">
@@ -242,6 +237,13 @@ const copyEmail = () => {
           <span>•</span>
           <span class="text-purple-300/80">Built with Vue 3 & Tailwind</span>
         </div>
+      </div>
+
+        <!-- Background Ambient Typography Watermark (Visible on mobile & desktop) -->
+      <div class="select-none pointer-events-none opacity-20 sm:opacity-25 group-hover/footer:opacity-35 transition-all duration-700 whitespace-nowrap z-0">
+        <span class="font-display font-black text-[54px] min-[400px]:text-[68px] sm:text-[120px] lg:text-[160px] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-purple-400 to-pink-500 uppercase drop-shadow-[0_0_35px_rgba(168,85,247,0.4)] animate-gradient-text">
+          BHARATH M N
+        </span>
       </div>
 
     </footer>

@@ -18,7 +18,7 @@ import Footer from '@/components/Footer.vue';
     <Header />
 
     <!-- Main Container -->
-    <main class="w-full max-w-5xl px-4 pt-20 sm:pt-24 pb-8 flex-1 flex flex-col justify-start z-10 relative">
+    <main class="w-full max-w-5xl px-4 pt-20 sm:pt-24 flex-1 flex flex-col justify-start z-10 relative">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
