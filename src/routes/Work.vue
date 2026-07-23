@@ -7,7 +7,13 @@ const projects = [
     url: 'https://healthcare-saas-789.netlify.app/login?user=demo',
     displayUrl: 'healthcare-saas-789.netlify.app',
     image: '/projects/healthcare-saas.png',
-    tags: ['React.js', 'Node.js', 'Firebase', 'Tailwind CSS']
+    badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+    tags: [
+      { name: 'React.js', cls: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30' },
+      { name: 'Node.js', cls: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' },
+      { name: 'Firebase', cls: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
+      { name: 'Tailwind CSS', cls: 'bg-sky-500/15 text-sky-400 border-sky-500/30' }
+    ]
   },
   {
     title: 'AI Assistant',
@@ -16,7 +22,13 @@ const projects = [
     url: 'https://agent-b7.vercel.app',
     displayUrl: 'agent-b7.vercel.app',
     image: '/projects/ai-assistance.png',
-    tags: ['React.js', 'Python', 'Google ADK', 'Vercel']
+    badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40',
+    tags: [
+      { name: 'React.js', cls: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30' },
+      { name: 'Python', cls: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
+      { name: 'Google ADK', cls: 'bg-fuchsia-500/15 text-fuchsia-400 border-fuchsia-500/30' },
+      { name: 'Vercel', cls: 'bg-slate-500/15 text-slate-300 border-slate-500/30' }
+    ]
   },
   {
     title: 'GearX AI',
@@ -25,7 +37,12 @@ const projects = [
     url: 'https://gearx.ai',
     displayUrl: 'gearx-ai-demo.netlify.app',
     image: '/projects/gearx.png',
-    tags: ['React.js', 'Tailwind CSS', 'Node.js']
+    badgeColor: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40',
+    tags: [
+      { name: 'React.js', cls: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30' },
+      { name: 'Tailwind CSS', cls: 'bg-sky-500/15 text-sky-400 border-sky-500/30' },
+      { name: 'Node.js', cls: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' }
+    ]
   },
   {
     title: 'My Dream Paints',
@@ -34,7 +51,11 @@ const projects = [
     url: 'https://mydreampaints.com/',
     displayUrl: 'mydreampaints.com',
     image: '/projects/mydreampaints.png',
-    tags: ['Next.js', 'Tailwind CSS']
+    badgeColor: 'bg-pink-500/20 text-pink-300 border-pink-500/40',
+    tags: [
+      { name: 'Next.js', cls: 'bg-indigo-500/15 text-indigo-400 border-indigo-500/30' },
+      { name: 'Tailwind CSS', cls: 'bg-sky-500/15 text-sky-400 border-sky-500/30' }
+    ]
   },
   {
     title: 'MKS Foods',
@@ -43,7 +64,13 @@ const projects = [
     url: 'https://mksfoods.in/',
     displayUrl: 'mksfoods.com',
     image: '/projects/mksfoods.png',
-    tags: ['React.js', 'Next.js', 'Tailwind CSS', 'Netlify']
+    badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+    tags: [
+      { name: 'React.js', cls: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30' },
+      { name: 'Next.js', cls: 'bg-indigo-500/15 text-indigo-400 border-indigo-500/30' },
+      { name: 'Tailwind CSS', cls: 'bg-sky-500/15 text-sky-400 border-sky-500/30' },
+      { name: 'Netlify', cls: 'bg-teal-500/15 text-teal-400 border-teal-500/30' }
+    ]
   }
 ];
 
@@ -53,42 +80,41 @@ const projects = [
   <div class="flex flex-col gap-12 w-full mt-6 relative z-10">
     <!-- Header Hero -->
     <section class="flex flex-col gap-4 text-center items-center">
-      <h1 class="text-3xl md:text-4xl font-extrabold font-display leading-tight tracking-tight bg-gradient-to-b from-text-primary via-text-primary to-text-secondary bg-clip-text text-transparent">
+      <h1 class="text-3xl md:text-4xl font-extrabold font-display leading-tight tracking-tight bg-gradient-to-r from-sky-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
         Building premium web products across frontend, backend, AI, and delivery.
       </h1>
-      <p class="text-sm md:text-base text-text-secondary leading-relaxed px-2">
+      <p class="text-sm md:text-base text-text-secondary leading-relaxed px-2 max-w-3xl">
         A focused overview of my production experience and shipped projects, from scalable React and Next.js interfaces to APIs, microservices, CI/CD, and AI-assisted development.
       </p>
-
     </section>
 
     <!-- Section Divider -->
-    <hr class="border-border-weak/40 w-1/5 mx-auto" />
+    <div class="h-[1px] w-1/3 mx-auto bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div>
 
     <!-- Selected Builds Grid -->
     <section class="flex flex-col gap-6 mb-8">
       <div class="flex flex-col gap-1.5 text-center items-center">
-        <h2 class="text-xs font-bold text-text-muted uppercase tracking-widest font-display">Selected Builds</h2>
+        <h2 class="text-xs font-extrabold text-transparent bg-gradient-to-r from-sky-400 to-purple-400 bg-clip-text uppercase tracking-widest font-display">Selected Builds</h2>
         <p class="text-xs text-text-secondary max-w-md">
           Production and portfolio projects that show the range of my frontend, full-stack, cloud, and AI-focused work.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 gap-24 mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
         <div 
           v-for="project in projects" 
           :key="project.title"
-          class="bg-bg-card/75 backdrop-blur-xs border border-border-weak hover:border-brand-strong/50 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.15)] hover:-translate-y-2 rounded-2xl overflow-hidden flex flex-col transition-all duration-500 group"
+          class="bg-bg-card/85 backdrop-blur-md border border-border-weak hover:border-sky-400/60 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2 rounded-2xl overflow-hidden flex flex-col transition-all duration-500 group"
         >
           <!-- Image Zoom & Overlays -->
           <div class="aspect-video w-full overflow-hidden bg-neutral-weak relative border-b border-border-weak">
             <!-- Floating Top Badges -->
             <div class="absolute top-3 inset-x-3 flex items-center justify-between z-20 pointer-events-none">
-              <span class="px-2.5 py-0.5 bg-bg-card/90 backdrop-blur-md border border-border-weak rounded-md text-[9px] font-bold uppercase tracking-wider text-text-secondary shadow-xs">
+              <span :class="['px-3 py-1 backdrop-blur-md border rounded-lg text-[9px] font-extrabold uppercase tracking-wider shadow-md', project.badgeColor]">
                 Featured Project
               </span>
-              <div class="w-7 h-7 rounded-full bg-bg-card/90 backdrop-blur-md border border-border-weak flex items-center justify-center text-text-secondary group-hover:text-brand group-hover:border-brand-strong/50 group-hover:scale-110 shadow-xs transition-all duration-300">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <div class="w-8 h-8 rounded-full bg-bg-card/90 backdrop-blur-md border border-white/20 flex items-center justify-center text-text-secondary group-hover:text-sky-400 group-hover:border-sky-400 group-hover:scale-110 shadow-md transition-all duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                 </svg>
               </div>
@@ -101,22 +127,22 @@ const projects = [
             />
             
             <!-- Diagonal Sheen reflection sweep -->
-            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none z-10"></div>
+            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none z-10"></div>
             
             <!-- Ambient hover brand gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-brand/10 to-transparent opacity-85 group-hover:opacity-30 transition-opacity duration-500 z-5"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-sky-500/20 to-transparent opacity-85 group-hover:opacity-40 transition-opacity duration-500 z-5"></div>
           </div>
 
           <!-- Card Body -->
           <div class="p-5 flex flex-col gap-4 flex-1">
             <div class="flex flex-col gap-2">
               <div class="flex flex-col gap-0.5">
-                <h3 class="text-lg font-bold font-display text-text-primary group-hover:text-brand-text transition-colors duration-200">
+                <h3 class="text-lg font-bold font-display text-text-primary group-hover:text-sky-400 transition-colors duration-200">
                   {{ project.title }}
                 </h3>
-                <span class="text-[10px] sm:text-[11px] text-brand-text font-bold uppercase tracking-wider">{{ project.slogan }}</span>
+                <span class="text-[10px] sm:text-[11px] text-purple-400 font-bold uppercase tracking-wider">{{ project.slogan }}</span>
               </div>
-              <p class="text-xs text-text-secondary leading-relaxed min-h-[50px]">
+              <p class="text-xs text-text-secondary leading-relaxed min-h-[44px]">
                 {{ project.description }}
               </p>
             </div>
@@ -125,23 +151,25 @@ const projects = [
             <div class="flex flex-wrap gap-1.5">
               <span 
                 v-for="tag in project.tags" 
-                :key="tag"
-                class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-neutral-weak border border-neutral-strong/10 text-[9px] uppercase font-bold tracking-wider text-text-secondary rounded-md"
+                :key="tag.name"
+                :class="[
+                  'inline-flex items-center gap-1.5 px-2.5 py-0.5 text-[10px] uppercase font-extrabold tracking-wider rounded-md border',
+                  tag.cls
+                ]"
               >
-                <span class="w-1.5 h-1.5 rounded-full bg-text-muted/60"></span>
-                {{ tag }}
+                {{ tag.name }}
               </span>
             </div>
 
             <!-- Card Footer -->
             <div class="flex items-center justify-between gap-4 mt-auto pt-3 border-t border-border-weak/40 text-xs">
-              <span class="text-text-muted font-mono tracking-tight text-[11px]">{{ project.displayUrl }}</span>
+              <span class="text-sky-400/80 font-mono tracking-tight text-[11px]">{{ project.displayUrl }}</span>
               <a 
                 v-if="project.url !== '#'"
                 :href="project.url" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                class="inline-flex items-center gap-1 px-3 py-1 border border-brand-strong/35 hover:border-brand-strong/70 bg-brand-weak/20 hover:bg-brand-medium/40 text-brand-text hover:text-brand font-bold rounded-full transition-all duration-200 text-xs group/link"
+                class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-gradient-to-r from-sky-500 to-purple-500 hover:from-sky-400 hover:to-purple-400 text-white font-bold rounded-full transition-all duration-200 text-xs group/link shadow-md shadow-purple-500/20"
               >
                 View project
                 <svg class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
