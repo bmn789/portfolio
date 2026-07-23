@@ -19,10 +19,6 @@ const breadcrumbs = computed(() => {
   }
   return list;
 });
-
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
 </script>
 
 <template>
@@ -34,7 +30,7 @@ const scrollToTop = () => {
     <footer class="mt-12 pt-10 pb-8 border-t border-purple-500/20 flex flex-col gap-10 relative z-10 w-full">
       
       <!-- Top / Main Footer Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-sm">
         
         <!-- Column 1: Brand & Bio -->
         <div class="flex flex-col gap-3">
@@ -123,29 +119,6 @@ const scrollToTop = () => {
               </a>
             </li>
           </ul>
-        </div>
-
-        <!-- Column 4: Back to Top & Tech Stack -->
-        <div class="flex flex-col gap-3">
-          <h4 class="text-xs font-extrabold uppercase tracking-wider text-amber-400 font-display">Overview</h4>
-          <div class="flex flex-col gap-3">
-            <button 
-              @click="scrollToTop" 
-              class="px-4 py-2 bg-bg-card/80 border border-purple-500/30 hover:border-sky-400/60 rounded-xl text-xs font-semibold text-text-primary hover:text-sky-300 transition-all duration-300 flex items-center justify-between group cursor-pointer"
-            >
-              <span>Back to top</span>
-              <svg class="w-4 h-4 text-sky-400 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-              </svg>
-            </button>
-
-            <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="px-2 py-0.5 bg-sky-500/10 border border-sky-500/20 text-[10px] font-mono text-sky-300 rounded-md">Vue 3</span>
-              <span class="px-2 py-0.5 bg-purple-500/10 border border-purple-500/20 text-[10px] font-mono text-purple-300 rounded-md">TypeScript</span>
-              <span class="px-2 py-0.5 bg-pink-500/10 border border-pink-500/20 text-[10px] font-mono text-pink-300 rounded-md">Tailwind CSS</span>
-              <span class="px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-mono text-emerald-300 rounded-md">Vite</span>
-            </div>
-          </div>
         </div>
 
       </div>
