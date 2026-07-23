@@ -231,3 +231,41 @@ html.dark .bg-dot-grid {
 .active-link {
   @apply font-semibold bg-gradient-to-r from-sky-500/20 via-purple-500/20 to-pink-500/20 text-text-primary border border-sky-500/30 shadow-xs;
 }
+
+/* Custom Hero Headline & Domain Badges Animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-text {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-4px) scale(1.02); }
+}
+
+.animate-float-1 { animation: float-badge 4s ease-in-out infinite; }
+.animate-float-2 { animation: float-badge 4s ease-in-out infinite 1s; }
+.animate-float-3 { animation: float-badge 4s ease-in-out infinite 2s; }
+.animate-float-4 { animation: float-badge 4s ease-in-out infinite 3s; }
+

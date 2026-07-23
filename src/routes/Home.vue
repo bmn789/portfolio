@@ -146,11 +146,163 @@ const certificates = [
         </span>
       </a>
 
-      <!-- Headline with Multicolor Gradient -->
-      <h1
-        class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-tight tracking-tight px-2 bg-gradient-to-r from-sky-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-sm">
-        Frontend Engineering • Microservices • AI Agents • Fullstack Development
-      </h1>
+      <!-- Dynamic Hero Headline & Animated Domain Grid -->
+      <div class="flex flex-col items-center gap-5 w-full">
+        <!-- Main Animated Gradient Headline -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black font-display leading-tight tracking-tight px-2 bg-gradient-to-r from-sky-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-text drop-shadow-sm">
+          Frontend Engineering • Microservices • AI Agents • Fullstack Development
+        </h1>
+
+        <!-- Interactive Animated Domain Badges Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 w-full mt-2">
+          
+          <!-- Badge 1: Frontend Engineering -->
+          <div class="relative group p-4 rounded-2xl bg-bg-card/80 backdrop-blur-xl border border-sky-500/30 hover:border-sky-400/70 hover:bg-sky-500/10 shadow-lg shadow-sky-500/5 hover:shadow-sky-500/20 transition-all duration-300 animate-float-1 flex flex-col justify-between text-left overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-24 h-24 bg-sky-500/15 rounded-full blur-xl group-hover:scale-150 transition-transform"></div>
+            <div class="flex items-center justify-between mb-2">
+              <div class="w-9 h-9 rounded-xl bg-sky-500/20 border border-sky-400/30 flex items-center justify-center text-sky-300 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                </svg>
+              </div>
+              <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-400"></span>
+              </span>
+            </div>
+            <div>
+              <h3 class="font-display font-extrabold text-sm sm:text-base text-text-primary group-hover:text-sky-300 transition-colors">
+                Frontend Engineering
+              </h3>
+              <p class="text-[11px] font-mono text-sky-400/90 mt-1">
+                Vue 3 • React • TypeScript • Tailwind
+              </p>
+            </div>
+          </div>
+
+          <!-- Badge 2: Microservices -->
+          <div class="relative group p-4 rounded-2xl bg-bg-card/80 backdrop-blur-xl border border-emerald-500/30 hover:border-emerald-400/70 hover:bg-emerald-500/10 shadow-lg shadow-emerald-500/5 hover:shadow-emerald-500/20 transition-all duration-300 animate-float-2 flex flex-col justify-between text-left overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-24 h-24 bg-emerald-500/15 rounded-full blur-xl group-hover:scale-150 transition-transform"></div>
+            <div class="flex items-center justify-between mb-2">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 group-hover:scale-110 group-hover:-rotate-3 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                </svg>
+              </div>
+              <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              </span>
+            </div>
+            <div>
+              <h3 class="font-display font-extrabold text-sm sm:text-base text-text-primary group-hover:text-emerald-300 transition-colors">
+                Microservices
+              </h3>
+              <p class="text-[11px] font-mono text-emerald-400/90 mt-1">
+                Python • Node.js • Docker • REST
+              </p>
+            </div>
+          </div>
+
+          <!-- Badge 3: AI Agents -->
+          <div class="relative group p-4 rounded-2xl bg-bg-card/80 backdrop-blur-xl border border-pink-500/30 hover:border-pink-400/70 hover:bg-pink-500/10 shadow-lg shadow-pink-500/5 hover:shadow-pink-500/20 transition-all duration-300 animate-float-3 flex flex-col justify-between text-left overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-24 h-24 bg-pink-500/15 rounded-full blur-xl group-hover:scale-150 transition-transform"></div>
+            <div class="flex items-center justify-between mb-2">
+              <div class="w-9 h-9 rounded-xl bg-pink-500/20 border border-pink-400/30 flex items-center justify-center text-pink-300 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+                </svg>
+              </div>
+              <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-400"></span>
+              </span>
+            </div>
+            <div>
+              <h3 class="font-display font-extrabold text-sm sm:text-base text-text-primary group-hover:text-pink-300 transition-colors">
+                AI Agents
+              </h3>
+              <p class="text-[11px] font-mono text-pink-400/90 mt-1">
+                Gemini API • LLMs • RAG • Automation
+              </p>
+            </div>
+          </div>
+
+          <!-- Badge 4: Fullstack Development -->
+          <div class="relative group p-4 rounded-2xl bg-bg-card/80 backdrop-blur-xl border border-purple-500/30 hover:border-purple-400/70 hover:bg-purple-500/10 shadow-lg shadow-purple-500/5 hover:shadow-purple-500/20 transition-all duration-300 animate-float-4 flex flex-col justify-between text-left overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-24 h-24 bg-purple-500/15 rounded-full blur-xl group-hover:scale-150 transition-transform"></div>
+            <div class="flex items-center justify-between mb-2">
+              <div class="w-9 h-9 rounded-xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center text-purple-300 group-hover:scale-110 group-hover:-rotate-3 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3m-5.571-3l5.571-3m0 6l5.571 3m-5.571-3l5.571-3m0 6L21.75 12l-4.179-2.25m0 0l-5.571 3m5.571-3l-5.571-3" />
+                </svg>
+              </div>
+              <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-purple-400"></span>
+              </span>
+            </div>
+            <div>
+              <h3 class="font-display font-extrabold text-sm sm:text-base text-text-primary group-hover:text-purple-300 transition-colors">
+                Fullstack Development
+              </h3>
+              <p class="text-[11px] font-mono text-purple-400/90 mt-1">
+                PostgreSQL • Cloud • CI/CD • System Design
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Continuous Infinite Marquee Ticker -->
+        <div class="w-full overflow-hidden rounded-full bg-bg-card/50 backdrop-blur-md border border-purple-500/20 py-2.5 mt-2 relative">
+          <div class="animate-marquee whitespace-nowrap flex items-center gap-8 font-mono text-xs text-text-secondary">
+            <!-- Repeat item set 1 -->
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+              <span class="font-bold text-sky-300">Frontend Engineering</span>
+            </span>
+            <span class="text-purple-400/60">•</span>
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="font-bold text-emerald-300">Microservices</span>
+            </span>
+            <span class="text-purple-400/60">•</span>
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span>
+              <span class="font-bold text-pink-300">AI Agents</span>
+            </span>
+            <span class="text-purple-400/60">•</span>
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+              <span class="font-bold text-purple-300">Fullstack Development</span>
+            </span>
+            <span class="text-purple-400/60">•</span>
+
+            <!-- Repeat item set 2 for seamless loop -->
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+              <span class="font-bold text-sky-300">Frontend Engineering</span>
+            </span>
+            <span class="text-purple-400/60">•</span>
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="font-bold text-emerald-300">Microservices</span>
+            </span>
+            <span class="text-purple-400/60">•</span>
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span>
+              <span class="font-bold text-pink-300">AI Agents</span>
+            </span>
+            <span class="text-purple-400/60">•</span>
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+              <span class="font-bold text-purple-300">Fullstack Development</span>
+            </span>
+            <span class="text-purple-400/60">•</span>
+          </div>
+        </div>
+      </div>
 
       <!-- Stats Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-4">
@@ -185,10 +337,10 @@ const certificates = [
           class="bg-bg-card/90 backdrop-blur-md border border-pink-500/20 hover:border-pink-400/60 hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-500/10 rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 text-left group">
           <div
             class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white font-extrabold text-xl shrink-0 shadow-md shadow-pink-500/20 group-hover:scale-110 transition-transform">
-            2
+            2+
           </div>
           <div class="flex flex-col">
-            <span class="font-bold text-sm text-text-primary leading-tight">Featured builds</span>
+            <span class="font-bold text-sm text-text-primary leading-tight">Years in AI Automation</span>
             <span class="text-xs text-text-muted mt-0.5">Shipped SaaS & AI agent systems</span>
           </div>
         </div>
