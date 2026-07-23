@@ -404,111 +404,7 @@ const certificates = [
     </section>
 
     <!-- Section Divider -->
-    <div class="h-[1px] w-1/3 mx-auto bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div>
-
-    <!-- Work Experience Section -->
-    <section class="flex flex-col gap-6 relative z-10">
-      <div class="flex flex-col items-center text-center gap-2">
-        <h2 class="text-xs font-extrabold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text uppercase tracking-widest font-display">Work Experience</h2>
-        <div class="w-12 h-[3px] bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
-      </div>
-
-      <div class="flex flex-col gap-6">
-        <div v-for="exp in experiences" :key="exp.company" :class="[
-          'bg-bg-card/85 backdrop-blur-md border border-border-weak rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 group/card hover:-translate-y-1 hover:shadow-xl',
-          exp.border, exp.shadow
-        ]">
-          <!-- Header -->
-          <div class="flex items-start justify-between gap-4 flex-wrap">
-            <div class="flex items-center gap-3">
-              <div :class="[
-                'w-10 h-10 rounded-2xl bg-gradient-to-br flex items-center justify-center text-white font-extrabold text-sm shadow-md transition-all duration-300 group-hover/card:scale-110',
-                exp.gradient
-              ]">
-                {{ exp.index }}
-              </div>
-              <div class="flex flex-col">
-                <h3 class="font-bold font-display text-text-primary text-base sm:text-lg leading-tight group-hover/card:text-sky-400 transition-colors duration-300">
-                  {{ exp.company }}
-                </h3>
-                <span class="text-xs text-text-secondary font-semibold">{{ exp.role }}</span>
-              </div>
-            </div>
-            <span
-              class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs rounded-full font-medium">
-              {{ exp.period }}
-            </span>
-          </div>
-
-          <!-- Bullet points -->
-          <ul class="list-disc pl-5 text-xs sm:text-sm text-text-secondary flex flex-col gap-2">
-            <li v-for="(bullet, bidx) in exp.bullets" :key="bidx" class="leading-relaxed">
-              {{ bullet }}
-            </li>
-          </ul>
-
-          <!-- Tags -->
-          <div class="flex flex-wrap gap-2 pt-3 border-t border-border-weak/40">
-            <span v-for="tag in exp.tags" :key="tag.text" :class="[
-              'px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-lg border',
-              tag.color
-            ]">
-              {{ tag.text }}
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Divider -->
-    <div class="h-[1px] w-1/3 mx-auto bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent"></div>
-
-    <!-- Education Section -->
-    <section class="flex flex-col gap-6 relative z-10">
-      <div class="flex flex-col items-center text-center gap-2">
-        <h2 class="text-xs font-extrabold text-transparent bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text uppercase tracking-widest font-display">Education</h2>
-        <div class="w-12 h-[3px] bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></div>
-      </div>
-
-      <div
-        class="bg-bg-card/85 backdrop-blur-md border border-emerald-500/20 hover:border-emerald-400/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/10 rounded-2xl p-6 flex flex-col gap-6 transition-all duration-300">
-        <div class="flex items-start justify-between gap-4 flex-wrap md:flex-nowrap">
-          <div class="flex flex-col gap-3">
-            <span
-              class="px-3 py-0.5 bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] uppercase font-bold tracking-wider rounded-full w-fit">
-              Bachelor of Engineering
-            </span>
-            <div class="flex flex-col gap-1">
-              <h3 class="text-base sm:text-lg font-bold font-display text-text-primary leading-snug">Visvesvaraya
-                Technological University</h3>
-              <span class="text-xs sm:text-sm text-text-secondary">Electronics and Communication Engineering</span>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center justify-center p-3 sm:p-4 bg-gradient-to-br from-amber-500/20 to-emerald-500/20 border border-amber-400/30 rounded-2xl min-w-[84px] shrink-0 text-center shadow-md">
-            <span class="text-2xl font-black text-amber-400">8.0</span>
-            <span class="text-[9px] text-amber-300 uppercase tracking-widest font-bold">CGPA</span>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-emerald-500/15 border border-emerald-500/25 text-emerald-400 text-xs rounded-xl font-medium">
-            2018 — 2022
-          </span>
-          <span
-            class="px-3 py-1 bg-sky-500/15 border border-sky-500/25 text-sky-400 text-xs rounded-xl font-medium">
-            Bangalore, Karnataka
-          </span>
-          <span class="px-3 py-1 bg-purple-500/15 border border-purple-500/25 text-purple-400 text-xs rounded-xl font-medium">
-            Engineering Foundation
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Divider -->
-    <div class="h-[1px] w-1/3 mx-auto bg-gradient-to-r from-transparent via-pink-500/40 to-transparent"></div>
+    <div class="h-[1px] w-1/3 mx-auto bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent"></div>
 
     <!-- Featured Projects Section -->
     <section class="flex flex-col gap-6 relative z-10">
@@ -584,6 +480,110 @@ const certificates = [
                 </svg>
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="h-[1px] w-1/3 mx-auto bg-gradient-to-r from-transparent via-sky-500/40 to-transparent"></div>
+
+    <!-- Education Section -->
+    <section class="flex flex-col gap-6 relative z-10">
+      <div class="flex flex-col items-center text-center gap-2">
+        <h2 class="text-xs font-extrabold text-transparent bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text uppercase tracking-widest font-display">Education</h2>
+        <div class="w-12 h-[3px] bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></div>
+      </div>
+
+      <div
+        class="bg-bg-card/85 backdrop-blur-md border border-emerald-500/20 hover:border-emerald-400/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/10 rounded-2xl p-6 flex flex-col gap-6 transition-all duration-300">
+        <div class="flex items-start justify-between gap-4 flex-wrap md:flex-nowrap">
+          <div class="flex flex-col gap-3">
+            <span
+              class="px-3 py-0.5 bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] uppercase font-bold tracking-wider rounded-full w-fit">
+              Bachelor of Engineering
+            </span>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-base sm:text-lg font-bold font-display text-text-primary leading-snug">Visvesvaraya
+                Technological University</h3>
+              <span class="text-xs sm:text-sm text-text-secondary">Electronics and Communication Engineering</span>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center justify-center p-3 sm:p-4 bg-gradient-to-br from-amber-500/20 to-emerald-500/20 border border-amber-400/30 rounded-2xl min-w-[84px] shrink-0 text-center shadow-md">
+            <span class="text-2xl font-black text-amber-400">8.0</span>
+            <span class="text-[9px] text-amber-300 uppercase tracking-widest font-bold">CGPA</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-emerald-500/15 border border-emerald-500/25 text-emerald-400 text-xs rounded-xl font-medium">
+            2018 — 2022
+          </span>
+          <span
+            class="px-3 py-1 bg-sky-500/15 border border-sky-500/25 text-sky-400 text-xs rounded-xl font-medium">
+            Bangalore, Karnataka
+          </span>
+          <span class="px-3 py-1 bg-purple-500/15 border border-purple-500/25 text-purple-400 text-xs rounded-xl font-medium">
+            Engineering Foundation
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="h-[1px] w-1/3 mx-auto bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div>
+
+    <!-- Work Experience Section -->
+    <section class="flex flex-col gap-6 relative z-10">
+      <div class="flex flex-col items-center text-center gap-2">
+        <h2 class="text-xs font-extrabold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text uppercase tracking-widest font-display">Work Experience</h2>
+        <div class="w-12 h-[3px] bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <div v-for="exp in experiences" :key="exp.company" :class="[
+          'bg-bg-card/85 backdrop-blur-md border border-border-weak rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 group/card hover:-translate-y-1 hover:shadow-xl',
+          exp.border, exp.shadow
+        ]">
+          <!-- Header -->
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div class="flex items-center gap-3">
+              <div :class="[
+                'w-10 h-10 rounded-2xl bg-gradient-to-br flex items-center justify-center text-white font-extrabold text-sm shadow-md transition-all duration-300 group-hover/card:scale-110',
+                exp.gradient
+              ]">
+                {{ exp.index }}
+              </div>
+              <div class="flex flex-col">
+                <h3 class="font-bold font-display text-text-primary text-base sm:text-lg leading-tight group-hover/card:text-sky-400 transition-colors duration-300">
+                  {{ exp.company }}
+                </h3>
+                <span class="text-xs text-text-secondary font-semibold">{{ exp.role }}</span>
+              </div>
+            </div>
+            <span
+              class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs rounded-full font-medium">
+              {{ exp.period }}
+            </span>
+          </div>
+
+          <!-- Bullet points -->
+          <ul class="list-disc pl-5 text-xs sm:text-sm text-text-secondary flex flex-col gap-2">
+            <li v-for="(bullet, bidx) in exp.bullets" :key="bidx" class="leading-relaxed">
+              {{ bullet }}
+            </li>
+          </ul>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 pt-3 border-t border-border-weak/40">
+            <span v-for="tag in exp.tags" :key="tag.text" :class="[
+              'px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-lg border',
+              tag.color
+            ]">
+              {{ tag.text }}
+            </span>
           </div>
         </div>
       </div>

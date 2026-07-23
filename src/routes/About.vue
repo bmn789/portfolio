@@ -51,9 +51,8 @@ const upskills = [
 
 <template>
   <div class="w-full">
-    <div class="-mx-4 sm:mx-0 relative overflow-hidden rounded-none sm:rounded-2xl border-y sm:border border-sky-500/30 shadow-lg bg-bg-card/30">
-      <img src="/banner.png" alt="Banner" class="w-full h-auto object-contain sm:object-cover sm:h-72 md:h-80 lg:h-96 z-0 object-center block" />
-      <div class="absolute inset-0 bg-gradient-to-t from-bg-page via-transparent to-transparent pointer-events-none"></div>
+    <div class="-mx-4 sm:mx-0 relative overflow-hidden rounded-none sm:rounded-2xl border-y sm:border border-sky-500/30 bg-bg-card/30">
+      <img src="https://images.pexels.com/photos/4389465/pexels-photo-4389465.jpeg" alt="Banner" class="w-full h-auto object-contain sm:object-cover sm:h-72 md:h-80 lg:h-96 z-0 object-center block" />
     </div>
 
     <div class="flex flex-col gap-12 w-full mt-6 relative z-10">
