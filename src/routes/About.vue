@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 const skills = [
   { name: 'TypeScript', bg: 'bg-sky-500/15', text: 'text-sky-400', border: 'border-sky-500/30' },
   { name: 'React.js', bg: 'bg-cyan-500/15', text: 'text-cyan-400', border: 'border-cyan-500/30' },
@@ -38,6 +39,8 @@ const skills = [
   { name: 'Agents', bg: 'bg-pink-500/15', text: 'text-pink-400', border: 'border-pink-500/30' },
   { name: 'LLMs', bg: 'bg-sky-400/15', text: 'text-sky-300', border: 'border-sky-400/30' }
 ];
+
+skills.map(d=>d.name.toLowerCase)
 
 const upskills = [
   {

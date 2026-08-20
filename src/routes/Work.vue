@@ -35,7 +35,7 @@ const projects = [
     slogan: 'Product modules, admin workflows, and cloud delivery',
     description: 'User and admin modules for an AI product, built with modern React foundations and production deployment workflows.',
     url: 'https://gearx.ai',
-    displayUrl: 'gearx-ai-demo.netlify.app',
+    displayUrl: 'gearx.ai',
     image: '/projects/gearx.png',
     badgeColor: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40',
     tags: [
