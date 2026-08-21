@@ -37,8 +37,8 @@
         <p class="text-lg md:text-xl font-semibold text-blue-700">Software Engineer - SDE | 4+ Years Experience</p>
 
         <div class="flex gap-4">
-            <p><a href="mailto:bmn7892@gmail.com" class="hover:underline">bmn7892@gmail.com</a></p>
-            <p>+91 7892475321</p>
+            <p id="email">bmn7892@gmail.com</p>
+            <p>+91 <span id="mobile">7892475321</span></p>
             <p>Bangalore, Karnataka - 560076</p>
         </div>
     </header>
@@ -228,6 +228,15 @@
         </ol>
     </section>
 
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var email = params.get("email");
+            var mobile = params.get("mobile");
+            if (email) document.getElementById("email").textContent = email;
+            if (mobile) document.getElementById("mobile").textContent = mobile;
+        })();
+    </script>
 </body>
 
 </html>
