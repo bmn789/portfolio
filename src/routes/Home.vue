@@ -24,7 +24,7 @@ const experiences = [
     border: 'hover:border-sky-400/50',
     company: 'Codewave Technologies',
     role: 'Software Engineer',
-    period: 'Apr 2025 — July 2026',
+    period: 'Apr 2025 — August 2026',
     bullets: [
       'Developed scalable backend services, REST APIs, authentication systems, and PostgreSQL databases using Node.js, Express.js, and FastAPI (Python).',
       'Built real-time messaging services and microservices-based applications while integrating REST and GraphQL APIs.',
