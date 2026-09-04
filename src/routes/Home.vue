@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import WorkExperience from '../components/WorkExperience.vue';
 
 const skills = [
   { name: 'TypeScript', bg: 'bg-sky-500/15', text: 'text-sky-400', border: 'border-sky-500/30', dot: 'bg-sky-400' },
@@ -14,66 +14,6 @@ const skills = [
   { name: 'PostgreSQL', bg: 'bg-sky-600/15', text: 'text-sky-300', border: 'border-sky-600/30', dot: 'bg-sky-300' },
   { name: 'AWS', bg: 'bg-orange-500/15', text: 'text-orange-400', border: 'border-orange-500/30', dot: 'bg-orange-400' },
   { name: 'AI-Assistance', bg: 'bg-fuchsia-500/15', text: 'text-fuchsia-400', border: 'border-fuchsia-500/30', dot: 'bg-fuchsia-400' }
-];
-
-const experiences = [
-  {
-    index: '01',
-    gradient: 'from-sky-500 to-cyan-400',
-    shadow: 'shadow-sky-500/20',
-    border: 'hover:border-sky-400/50',
-    company: 'Codewave Technologies',
-    role: 'Software Engineer',
-    period: 'Apr 2025 — August 2026',
-    bullets: [
-      'Developed scalable backend services, REST APIs, authentication systems, and PostgreSQL databases using Node.js, Express.js, and FastAPI (Python).',
-      'Built real-time messaging services and microservices-based applications while integrating REST and GraphQL APIs.',
-      'Developed modern React.js, Next.js, and Vue.js applications and contributed to CI/CD automation using GitLab and Azure DevOps.'
-    ],
-    tags: [
-      { text: 'Product delivery', color: 'bg-sky-500/15 text-sky-400 border-sky-500/30' },
-      { text: 'Engineering systems', color: 'bg-purple-500/15 text-purple-400 border-purple-500/30' },
-      { text: 'API integration', color: 'bg-pink-500/15 text-pink-400 border-pink-500/30' }
-    ]
-  },
-  {
-    index: '02',
-    gradient: 'from-purple-500 to-indigo-500',
-    shadow: 'shadow-purple-500/20',
-    border: 'hover:border-purple-400/50',
-    company: 'Winline Technologies',
-    role: 'Software Developer',
-    period: 'Feb 2024 — Mar 2025',
-    bullets: [
-      'Developed full-stack applications with React.js, Next.js, and Node.js, building responsive user interfaces and scalable backend APIs.',
-      'Integrated REST APIs, optimized application performance and SEO, and ensured efficient data flow across systems.',
-      'Collaborated with Python/Django services to deliver reliable, production-ready solutions.'
-    ],
-    tags: [
-      { text: 'Full-Stack Web', color: 'bg-indigo-500/15 text-indigo-400 border-indigo-500/30' },
-      { text: 'SEO & Performance', color: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' },
-      { text: 'Django APIs', color: 'bg-amber-500/15 text-amber-400 border-amber-500/30' }
-    ]
-  },
-  {
-    index: '03',
-    gradient: 'from-pink-500 to-rose-500',
-    shadow: 'shadow-pink-500/20',
-    border: 'hover:border-pink-400/50',
-    company: 'Plausibility Solutions',
-    role: 'Frontend Developer',
-    period: 'Aug 2022 — Jan 2024',
-    bullets: [
-      'Developed applications using React.js, TypeScript, and JavaScript, building responsive user interfaces.',
-      'Integrated Django REST APIs to enable dynamic data handling and improve application functionality.',
-      'Implemented efficient state management using Redux and the Context API while optimizing performance and user experience.'
-    ],
-    tags: [
-      { text: 'React & Redux', color: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30' },
-      { text: 'TypeScript', color: 'bg-blue-500/15 text-blue-400 border-blue-500/30' },
-      { text: 'UI/UX Craft', color: 'bg-rose-500/15 text-rose-400 border-rose-500/30' }
-    ]
-  }
 ];
 
 const projects = [
@@ -535,59 +475,7 @@ const certificates = [
     <!-- Section Divider -->
     <div class="h-[1px] w-1/3 mx-auto bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div>
 
-    <!-- Work Experience Section -->
-    <section class="flex flex-col gap-6 relative z-10">
-      <div class="flex flex-col items-center text-center gap-2">
-        <h2 class="text-xs font-extrabold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text uppercase tracking-widest font-display">Work Experience</h2>
-        <div class="w-12 h-[3px] bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
-      </div>
-
-      <div class="flex flex-col gap-6">
-        <div v-for="exp in experiences" :key="exp.company" :class="[
-          'bg-bg-card/85 backdrop-blur-md border border-border-weak rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 group/card hover:-translate-y-1 hover:shadow-xl',
-          exp.border, exp.shadow
-        ]">
-          <!-- Header -->
-          <div class="flex items-start justify-between gap-4 flex-wrap">
-            <div class="flex items-center gap-3">
-              <div :class="[
-                'w-10 h-10 rounded-2xl bg-gradient-to-br flex items-center justify-center text-white font-extrabold text-sm shadow-md transition-all duration-300 group-hover/card:scale-110',
-                exp.gradient
-              ]">
-                {{ exp.index }}
-              </div>
-              <div class="flex flex-col">
-                <h3 class="font-bold font-display text-text-primary text-base sm:text-lg leading-tight group-hover/card:text-sky-400 transition-colors duration-300">
-                  {{ exp.company }}
-                </h3>
-                <span class="text-xs text-text-secondary font-semibold">{{ exp.role }}</span>
-              </div>
-            </div>
-            <span
-              class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs rounded-full font-medium">
-              {{ exp.period }}
-            </span>
-          </div>
-
-          <!-- Bullet points -->
-          <ul class="list-disc pl-5 text-xs sm:text-sm text-text-secondary flex flex-col gap-2">
-            <li v-for="(bullet, bidx) in exp.bullets" :key="bidx" class="leading-relaxed">
-              {{ bullet }}
-            </li>
-          </ul>
-
-          <!-- Tags -->
-          <div class="flex flex-wrap gap-2 pt-3 border-t border-border-weak/40">
-            <span v-for="tag in exp.tags" :key="tag.text" :class="[
-              'px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-lg border',
-              tag.color
-            ]">
-              {{ tag.text }}
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <WorkExperience />
 
     <!-- Section Divider -->
     <div class="h-[1px] w-1/3 mx-auto bg-gradient-to-r from-transparent via-amber-500/40 to-transparent"></div>

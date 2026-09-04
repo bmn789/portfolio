@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import WorkExperience from '../components/WorkExperience.vue';
 
 const skills = [
   { name: 'TypeScript', bg: 'bg-sky-500/15', text: 'text-sky-400', border: 'border-sky-500/30' },
@@ -136,6 +137,8 @@ const upskills = [
           </p>
         </div>
       </section>
+
+      <WorkExperience />
 
       <!-- Technical Skills Section -->
       <section class="flex flex-col gap-4">
