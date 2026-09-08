@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import WorkExperience from '../components/WorkExperience.vue';
+import { agenticSkills } from '../data/skills';
 
 const skills = [
   { name: 'TypeScript', bg: 'bg-sky-500/15', text: 'text-sky-400', border: 'border-sky-500/30', dot: 'bg-sky-400' },
@@ -13,7 +14,7 @@ const skills = [
   { name: 'MySQL', bg: 'bg-blue-500/15', text: 'text-blue-400', border: 'border-blue-500/30', dot: 'bg-blue-400' },
   { name: 'PostgreSQL', bg: 'bg-sky-600/15', text: 'text-sky-300', border: 'border-sky-600/30', dot: 'bg-sky-300' },
   { name: 'AWS', bg: 'bg-orange-500/15', text: 'text-orange-400', border: 'border-orange-500/30', dot: 'bg-orange-400' },
-  { name: 'AI-Assistance', bg: 'bg-fuchsia-500/15', text: 'text-fuchsia-400', border: 'border-fuchsia-500/30', dot: 'bg-fuchsia-400' }
+  ...agenticSkills
 ];
 
 const projects = [
@@ -34,7 +35,7 @@ const projects = [
   },
   {
     title: 'AI Assistant',
-    description: 'Built with React.js, Python, Google Agent Development Kit (ADK), LLM orchestration, and RAG-style agent workflows.',
+    description: 'Agentic assistant built with React.js, Python, Google Agent Development Kit (ADK), LLM orchestration, tool calling, and RAG-style agent workflows.',
     url: 'https://agent-b7.vercel.app',
     displayUrl: 'agent-b7.vercel.app',
     image: '/projects/ai-assistance.png',
@@ -44,7 +45,8 @@ const projects = [
       { name: 'React.js', cls: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30' },
       { name: 'Python', cls: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
       { name: 'Google ADK', cls: 'bg-fuchsia-500/15 text-fuchsia-400 border-fuchsia-500/30' },
-      { name: 'Vercel', cls: 'bg-slate-500/15 text-slate-300 border-slate-500/30' }
+      { name: 'RAG', cls: 'bg-purple-600/15 text-purple-400 border-purple-600/30' },
+      { name: 'Agentic', cls: 'bg-pink-500/15 text-pink-400 border-pink-500/30' }
     ]
   }
 ];
@@ -163,7 +165,7 @@ const certificates = [
                 AI Agents
               </h3>
               <p class="text-[11px] font-mono text-pink-400/90 mt-1">
-                Gemini API • LLMs • RAG • Automation
+                Google ADK • RAG • LLMs • Tool Calling
               </p>
             </div>
           </div>
@@ -322,7 +324,7 @@ const certificates = [
         <div class="flex items-start justify-between gap-4 flex-wrap">
           <div class="flex flex-col gap-1">
             <h3 class="text-base sm:text-lg font-bold font-display text-text-primary">Core Technical Proficiency</h3>
-            <span class="text-xs text-text-muted">Languages, frameworks, databases, and AI tooling.</span>
+            <span class="text-xs text-text-muted">Languages, frameworks, databases, and agentic development.</span>
           </div>
           <span
             class="px-3 py-1 bg-gradient-to-r from-sky-500/20 to-purple-500/20 border border-sky-400/30 text-sky-400 text-xs font-bold rounded-full">

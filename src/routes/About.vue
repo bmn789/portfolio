@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import WorkExperience from '../components/WorkExperience.vue';
+import { agenticSkills } from '../data/skills';
 
 const skills = [
   { name: 'TypeScript', bg: 'bg-sky-500/15', text: 'text-sky-400', border: 'border-sky-500/30' },
@@ -35,10 +36,7 @@ const skills = [
   { name: 'CI/CD', bg: 'bg-cyan-500/15', text: 'text-cyan-400', border: 'border-cyan-500/30' },
   { name: 'Docker', bg: 'bg-sky-500/15', text: 'text-sky-400', border: 'border-sky-500/30' },
   { name: 'Kubernetes', bg: 'bg-indigo-600/15', text: 'text-indigo-400', border: 'border-indigo-600/30' },
-  { name: 'Prompt Engineer', bg: 'bg-fuchsia-500/15', text: 'text-fuchsia-400', border: 'border-fuchsia-500/30' },
-  { name: 'RAG', bg: 'bg-purple-600/15', text: 'text-purple-400', border: 'border-purple-600/30' },
-  { name: 'Agents', bg: 'bg-pink-500/15', text: 'text-pink-400', border: 'border-pink-500/30' },
-  { name: 'LLMs', bg: 'bg-sky-400/15', text: 'text-sky-300', border: 'border-sky-400/30' }
+  ...agenticSkills
 ];
 
 skills.map(d=>d.name.toLowerCase)
@@ -132,8 +130,9 @@ const upskills = [
             performance, maintainability, and visual excellence.
           </p>
           <p>
-            More recently, I've been working on AI-driven applications involving Large Language Models (LLMs),
-            orchestrating autonomous agents, and implementing RAG architectures for custom client workflows.
+            More recently, I've been working on <span class="text-fuchsia-400 font-bold">agentic development</span>
+            involving Large Language Models (LLMs), Google ADK, multi-agent orchestration, tool calling,
+            and RAG architectures for custom client workflows.
           </p>
         </div>
       </section>

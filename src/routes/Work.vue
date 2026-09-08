@@ -17,8 +17,8 @@ const projects = [
   },
   {
     title: 'AI Assistant',
-    slogan: 'Agent experience, fast frontend, and Vercel delivery',
-    description: 'Conversational AI assistant using Astro, React, Vite, Tailwind CSS, and Google Agent Development Kit.',
+    slogan: 'Agentic development with Google ADK, RAG, and Vercel delivery',
+    description: 'Conversational AI assistant using React, Python, Google Agent Development Kit, RAG, LLM orchestration, and tool calling.',
     url: 'https://agent-b7.vercel.app',
     displayUrl: 'agent-b7.vercel.app',
     image: '/projects/ai-assistance.png',
@@ -27,7 +27,8 @@ const projects = [
       { name: 'React.js', cls: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30' },
       { name: 'Python', cls: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
       { name: 'Google ADK', cls: 'bg-fuchsia-500/15 text-fuchsia-400 border-fuchsia-500/30' },
-      { name: 'Vercel', cls: 'bg-slate-500/15 text-slate-300 border-slate-500/30' }
+      { name: 'RAG', cls: 'bg-purple-600/15 text-purple-400 border-purple-600/30' },
+      { name: 'Agentic', cls: 'bg-pink-500/15 text-pink-400 border-pink-500/30' }
     ]
   },
   {
@@ -84,7 +85,7 @@ const projects = [
         Building premium web products across frontend, backend, AI, and delivery.
       </h1>
       <p class="text-sm md:text-base text-text-secondary leading-relaxed px-2 max-w-3xl">
-        A focused overview of my production experience and shipped projects, from scalable React and Next.js interfaces to APIs, microservices, CI/CD, and AI-assisted development.
+        A focused overview of my production experience and shipped projects, from scalable React and Next.js interfaces to APIs, microservices, CI/CD, and agentic development.
       </p>
     </section>
 
