@@ -18,6 +18,25 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     index: '01',
+    gradient: 'from-amber-500 to-orange-500',
+    shadow: 'shadow-amber-500/20',
+    border: 'hover:border-amber-400/50',
+    company: 'American Express Global Business Travel',
+    role: 'Fullstack Developer',
+    period: 'Sep 2026 — Present',
+    bullets: [
+      'Building and maintaining full-stack features for enterprise travel and expense platforms using React.js, TypeScript, Node.js, and PostgreSQL.',
+      'Designing scalable REST APIs and microservices, and integrating them with internal and third-party systems.',
+      'Collaborating with cross-functional teams to deliver reliable, production-ready releases using CI/CD pipelines.'
+    ],
+    tags: [
+      { text: 'Enterprise Platforms', color: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
+      { text: 'Microservices', color: 'bg-orange-500/15 text-orange-400 border-orange-500/30' },
+      { text: 'CI/CD', color: 'bg-teal-500/15 text-teal-400 border-teal-500/30' }
+    ]
+  },
+  {
+    index: '02',
     gradient: 'from-sky-500 to-cyan-400',
     shadow: 'shadow-sky-500/20',
     border: 'hover:border-sky-400/50',
@@ -36,7 +55,7 @@ export const experiences: Experience[] = [
     ]
   },
   {
-    index: '02',
+    index: '03',
     gradient: 'from-purple-500 to-indigo-500',
     shadow: 'shadow-purple-500/20',
     border: 'hover:border-purple-400/50',
@@ -55,7 +74,7 @@ export const experiences: Experience[] = [
     ]
   },
   {
-    index: '03',
+    index: '04',
     gradient: 'from-pink-500 to-rose-500',
     shadow: 'shadow-pink-500/20',
     border: 'hover:border-pink-400/50',

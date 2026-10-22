@@ -68,7 +68,7 @@ const upskills = [
           <div class="flex flex-col gap-1">
             <h1 class="text-3xl font-extrabold font-display bg-gradient-to-r from-sky-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Bharath M N</h1>
             <span class="text-xs sm:text-sm text-sky-400 font-extrabold uppercase tracking-wider">Software Engineer - SDE
-              @Codewave | 4+ Years Experience</span>
+              @Amex GBT | 5+ Years Experience</span>
           </div>
 
           <div
@@ -116,7 +116,7 @@ const upskills = [
         <div
           class="bg-bg-card/85 backdrop-blur-md border border-border-weak rounded-2xl p-6 text-sm md:text-base text-text-secondary leading-relaxed flex flex-col gap-4 shadow-sm">
           <p>
-            I have over <span class="text-sky-400 font-bold border-b border-sky-400/30 pb-0.5">4 years</span>
+            I have over <span class="text-sky-400 font-bold border-b border-sky-400/30 pb-0.5">5 years</span>
             of experience building scalable full-stack applications and distributed systems. My core expertise is in
             <span class="text-cyan-400 font-bold">React.js</span>,
             <span class="text-indigo-400 font-bold">Next.js</span>,

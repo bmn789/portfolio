@@ -266,7 +266,7 @@ const certificates = [
           class="bg-bg-card/90 backdrop-blur-md border border-purple-500/20 hover:border-purple-400/60 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10 rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 text-left group">
           <div
             class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-500 flex items-center justify-center text-white font-extrabold text-xl shrink-0 shadow-md shadow-purple-500/20 group-hover:scale-110 transition-transform">
-            4+
+            5+
           </div>
           <div class="flex flex-col">
             <span class="font-bold text-sm text-text-primary leading-tight">Years applying them</span>
@@ -279,7 +279,7 @@ const certificates = [
           class="bg-bg-card/90 backdrop-blur-md border border-pink-500/20 hover:border-pink-400/60 hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-500/10 rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 text-left group">
           <div
             class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white font-extrabold text-xl shrink-0 shadow-md shadow-pink-500/20 group-hover:scale-110 transition-transform">
-            2+
+            4+
           </div>
           <div class="flex flex-col">
             <span class="font-bold text-sm text-text-primary leading-tight">Years in AI Automation</span>
@@ -302,7 +302,7 @@ const certificates = [
 
       <!-- Bio Paragraph -->
       <p class="text-sm md:text-base text-text-secondary leading-relaxed max-w-4xl mt-8 px-2">
-        Hi there 👋. I have over <span class="text-sky-400 font-bold">4 years</span> of experience building scalable applications and distributed systems. My
+        Hi there 👋. I have over <span class="text-sky-400 font-bold">5 years</span> of experience building scalable applications and distributed systems. My
         expertise
         includes <span class="text-purple-400 font-bold">Node.js, FastAPI (Python), TypeScript, PostgreSQL, React.js, Next.js, Vue.js</span> and <span class="text-pink-400 font-bold">Microservices</span>
         architecture. Throughout my career, I've designed high-performance backend services, database schemas,
